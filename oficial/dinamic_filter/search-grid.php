@@ -1,5 +1,13 @@
 <?php
 
+// Favoritos
+require_once('../control/funcFavoritos.php');
+if(isset($_SESSION['usuario'])){
+    $loggedIn = true;
+}else{
+    $loggedIn = false;
+}
+
 $id = $_GET['id'];
 $zipcode = $_GET['zipcode'];
 $county = $_GET['county'];

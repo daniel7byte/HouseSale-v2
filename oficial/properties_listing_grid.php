@@ -9,6 +9,15 @@ try {
   exit;
 }
 
+// Favoritos
+require_once('control/funcFavoritos.php');
+if(isset($_SESSION['usuario'])){
+    $loggedIn = true;
+}else{
+    $loggedIn = false;
+}
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,6 +29,37 @@ try {
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 <?php include("head-list.php"); ?>
 
+	<?php if ($loggedIn): ?>
+      <script>
+      function changeStatus(id, dato2) {
+        // if (confirm("Cambiar estado") == true) {
+          $.ajax({
+          type: 'POST',
+            url: 'control/funcFavoritos.php',
+            data: {
+              api: 'changeStatus',
+              id: id,
+              dato2: dato2,
+              usuario_id: <?=$_SESSION['id']?>
+            },
+            success: function(result){
+              if(result == false){
+                $("#"+dato2).removeClass('btn-info');
+                $("#"+dato2).addClass('btn-danger');
+                $("#"+dato2).html('<span class="glyphicon glyphicon-star-empty"></span>');
+              }else if(result == true){
+                $("#"+dato2).removeClass('btn-danger');
+                $("#"+dato2).addClass('btn-info');
+                $("#"+dato2).html('<span class="glyphicon glyphicon-star"></span>');
+              }else{
+                console.log(result);
+              }
+            }
+          });
+        // }
+      }
+    </script>
+    <?php endif ?>
  </head>
   <body class="properties_listing_grid menu-default hover-default ">
 
@@ -119,6 +159,11 @@ try {
                                       <div class="properties__offer-column">
                                         <div class="properties__offer-value"><strong>$<?=number_format($row['dato5'])?></strong><span class="properties__offer-period"></span>
                                         </div>
+                                        <?php if ($loggedIn): ?>
+                                          <div>
+                                            <?php include 'control/button.php'; ?>
+                                          </div>
+                                        <?php endif ?>
                                       </div>
                                     </div>
                                   </div>

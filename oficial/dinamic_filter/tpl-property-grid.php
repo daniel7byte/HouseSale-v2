@@ -11,6 +11,11 @@
 		  <div class="properties__offer-column">
 			<div class="properties__offer-value"><strong>$<?=number_format($row['dato5'])?></strong><span class="properties__offer-period"></span>
 			</div>
+			<?php if ($loggedIn): ?>
+              <div>
+                <?php include '../control/button.php'; ?>
+              </div>
+            <?php endif ?>
 		  </div>
 		</div>
 	  </div>
