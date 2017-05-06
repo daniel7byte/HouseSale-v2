@@ -119,13 +119,13 @@ if (isset($_POST['api'])) {
 
     } elseif ($_POST['api'] == 'changeStatus') {
 
-        if (isset($_POST['dato2'])) {
+        if (isset($_POST['dato2']) and isset($_POST['usuario_id'])) {
 
             echo changeStatus($_POST['id'], $_POST['dato2'], $_POST['usuario_id']);
 
         } else {
 
-            echo "ERROR: No se tiene el dato2";
+            echo "ERROR: No se tiene el dato2 o usuario_id";
 
         }
 
