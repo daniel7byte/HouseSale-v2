@@ -9,6 +9,14 @@ try {
   exit;
 }
 
+// Favoritos
+require_once('control/funcFavoritos.php');
+if(isset($_SESSION['usuario'])){
+    $loggedIn = true;
+}else{
+    $loggedIn = false;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +64,37 @@ try {
 
 
 
+  <?php if ($loggedIn): ?>
+    <script>
+      function changeStatus(id, dato2) {
+        // if (confirm("Cambiar estado") == true) {
+          $.ajax({
+          type: 'POST',
+            url: 'control/funcFavoritos.php',
+            data: {
+              api: 'changeStatus',
+              id: id,
+              dato2: dato2,
+              usuario_id: <?=$_SESSION['id']?>
+            },
+            success: function(result){
+              if(result == false){
+                $("#"+dato2).removeClass('btn-info');
+                $("#"+dato2).addClass('btn-danger');
+                $("#"+dato2).html('<span class="glyphicon glyphicon-star-empty"></span>');
+              }else if(result == true){
+                $("#"+dato2).removeClass('btn-danger');
+                $("#"+dato2).addClass('btn-info');
+                $("#"+dato2).html('<span class="glyphicon glyphicon-star"></span>');
+              }else{
+                console.log(result);
+              }
+            }
+          });
+        // }
+      }
+    </script>
+  <?php endif ?>
 </head>
 <body class="properties_listing_grid menu-default hover-default ">
 <!--
@@ -176,7 +215,10 @@ becomes
                               </div>
                               <div class="properties__intro">
                                 <p>Joygle.com</p>
-                              </div><a href="property_details.php?id=<?=$row['dato2']?>" class="properties__more"><?php echo LISTING_VIEWDETAILS ?></a>
+                              </div><a href="property_details.php?id=<?=$row['dato2']?>" class="properties__more">View details</a>
+                              <?php if ($loggedIn): ?>
+                                  <?php include 'control/button.php'; ?>
+                              <?php endif ?>
                             </div>
                           </div>
                         </div>

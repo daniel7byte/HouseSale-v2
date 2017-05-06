@@ -19,6 +19,9 @@
       <div class="properties__intro">
         <p>Joygle.com</p>
       </div><a href="property_details.php?id=<?=$row['dato2']?>" class="properties__more">View details</a>
+      <?php if ($loggedIn): ?>
+        <?php include '../control/button.php'; ?>
+      <?php endif ?>
     </div>
   </div>
 </div>
