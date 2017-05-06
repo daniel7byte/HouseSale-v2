@@ -6,8 +6,32 @@ if (!isset($_SESSION['usuario'])) {
     exit;
 }
 
-require_once '../config/parameters.php';
-require_once '../config/connection.php';
+if(is_readable("control/config/parameters.php")) {
+  include_once("control/config/parameters.php");
+} else if (is_readable("../config/parameters.php")) {
+  require_once '../config/parameters.php';
+}
+
+if(is_readable("control/config/connection.php")) {
+  include_once("control/config/connection.php");
+} else if (is_readable("../config/connection.php")) {
+  require_once '../config/connection.php';
+}
+
+
+function getSystemInmo($id) {
+    if ($id == null) {
+        return 'NULL';
+    }else{
+        if ($id == "1") {
+            return 'FMLS';
+        } elseif ($id == "0") {
+            return 'GAMLS';
+        }else{
+            return $id;
+        }
+    }
+}
 
 function getStatus($dato2, $usuario_id)
 {

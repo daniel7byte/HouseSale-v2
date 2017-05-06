@@ -17,20 +17,6 @@
 
   $urlMain = 'http://www.joygle.com/property_details.php?id=';
 
-  function getSystemInmo($id) {
-    if ($id == null) {
-      return 'NULL';
-    }else{
-      if ($id == "1") {
-        return 'FMLS';
-      } elseif ($id == "0") {
-        return 'GAMLS';
-      }else{
-        return $id;
-      }
-    }
-  }
-
 ?>
 <!DOCTYPE html>
 <html>

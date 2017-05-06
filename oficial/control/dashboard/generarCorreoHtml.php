@@ -18,20 +18,6 @@
   $urlMain = 'http://www.joygle.com/property_details.php?id=';
   $urlMainImg = 'http://www.joygle.com/dinamic_filter/getImages.php?id='; // &w=483&h=200
 
-  function getSystemInmo($id) {
-    if ($id == null) {
-      return 'NULL';
-    }else{
-      if ($id == "1") {
-        return 'FMLS';
-      } elseif ($id == "0") {
-        return 'GAMLS';
-      }else{
-        return $id;
-      }
-    }
-  }
-
   function getContentInmo($id) {
 
     $mysql = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
