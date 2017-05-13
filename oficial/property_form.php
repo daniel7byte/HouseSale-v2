@@ -25,7 +25,11 @@
     </select>
     <script>
         $( "form" ).submit(function( event ) {
-          if ( $( "#county" ).val() != "-" ) {
+          if ( $( "#city" ).val() == "-" ) {
+            if ( $( "#county" ).val() != "-" ) {
+              return;
+            }
+          }else{
             return;
           }
          
