@@ -12,7 +12,7 @@
 
 <div class="form-group">
     <label for="county" class="control-label"><?php echo FORM_LABEL3; ?></label>
-    <select class="form-control" name="county" id="county">
+    <select class="form-control" name="county" id="county" required>
         <option value="-"><?php echo FORM_SELECT_ALL; ?></option>
         <?php
         $queryCounty = $mysql->prepare("SELECT DISTINCT dato11 FROM datoscasas ORDER BY dato11 ASC;");
@@ -23,6 +23,16 @@
             <option value="<?=$row['dato11']?>"><?=$row['dato11']?></option>
         <?php endforeach; ?>
     </select>
+    <script>
+        $( "form" ).submit(function( event ) {
+          if ( $( "select:county" ).val() != "-" ) {
+            return;
+          }
+         
+          alert('The county field is required');
+          event.preventDefault();
+        });
+    </script>
 </div>
 
 <div class="form-group">
