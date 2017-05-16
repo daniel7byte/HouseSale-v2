@@ -1,3 +1,22 @@
+
+<script src="assets/sweetalert/sweetalert.min.js"></script>
+<link rel="stylesheet" href="assets/sweetalert/sweetalert.css">
+
+<script>
+    $( "form" ).submit(function( event ) {
+        if ( $( "#city" ).val() == "-" ) {
+            if ( $( "#county" ).val() != "-" ) {
+                return;
+            }
+        }else{
+            return;
+        }
+
+        sweetAlert("Oops...", "The county field is required!", "error");
+        event.preventDefault();
+    });
+</script>
+
 <div class="form-group">
     <label for="in-contract-type" class="control-label" style="font-size: 16px;"><?php echo FORM_LABEL1; ?></label>
     <select id="" data-placeholder="Contract type" class="form-control">
@@ -23,20 +42,6 @@
             <option value="<?=$row['dato11']?>"><?=$row['dato11']?></option>
         <?php endforeach; ?>
     </select>
-    <script>
-        $( "form" ).submit(function( event ) {
-          if ( $( "#city" ).val() == "-" ) {
-            if ( $( "#county" ).val() != "-" ) {
-              return;
-            }
-          }else{
-            return;
-          }
-         
-          alert('The county field is required');
-          event.preventDefault();
-        });
-    </script>
 </div>
 
 <div class="form-group">
