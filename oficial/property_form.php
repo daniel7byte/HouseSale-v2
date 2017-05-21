@@ -4,15 +4,19 @@
 
 <script>
     $( "form" ).submit(function( event ) {
-        if ( $( "#city" ).val() == "-" ) {
-            if ( $( "#county" ).val() != "-" ) {
+        if ( $( "#zipcode" ).val() == "" ) {
+            if ( $( "#city" ).val() == "-" ) {
+                if ( $( "#county" ).val() != "-" ) {
+                    return;
+                }
+            }else{
                 return;
             }
         }else{
             return;
         }
 
-        sweetAlert("Oops...", "The county field is required!", "error");
+        sweetAlert("", "Select a field. City or County!", "error");
         event.preventDefault();
     });
 </script>
