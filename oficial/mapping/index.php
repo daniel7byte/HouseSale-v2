@@ -164,7 +164,7 @@
             </section>
         </section>
     </main>
-    <script src="system/filter/magiclist.js"></script>
+    <script src="system/filter/magic-grid.js"></script>
     <script>
     // Fixing height of main tag
     ((d)=>{
