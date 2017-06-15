@@ -237,6 +237,26 @@
         </div>
     </main>
     <script>
+    $(document).ready(function(){
+      <?php
+          foreach ($rows as $row):
+
+              $price = "$" . number_format($row["dato5"]);
+
+              $geostr = trim($row['dato7'] . ', ' . $row['dato10'] . ', '. $row['dato11'] . ', GA ' . $row['dato24'] . ', US');
+              $geohtml = trim(
+                '<h3>'. $geostr . '</h3>' .
+                '<strong>' . $price . '</strong>' .
+                '<p>' . $row['description'] . '</p>'
+              );
+
+              echo trim('loadGetGeo("'.$geostr.'", "'.$geohtml.'", "'.$row['dato2'].'");');
+
+          endforeach;
+      ?>
+    });
+    </script>
+    <script>
     // Fixing height of main tag
     ((d)=>{
         let   clientWindow = d.querySelector('.flex')
