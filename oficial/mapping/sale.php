@@ -41,7 +41,6 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1LHwSTnFdkSm9dA8CrIpicTLLCUJ7i7w" ></script>
     <script src="assets/js/gmaps.min.js"></script>
-    <script type="text/javascript" src="../bower_components/markerclustererplus/dist/markerclusterer.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript">
         var map;
@@ -244,14 +243,35 @@
         clientWindow.style.maxHeight = 'calc(100% - '+ clientWindow.offsetTop +'px)'
     })(document)
     </script>
+    <script src="../assets/sweetalert/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="../assets/sweetalert/sweetalert.css">
+
+    <script>
+    $( "form" ).submit(function( event ) {
+        if ( $( "#zipcode" ).val() == "" ) {
+            if ( $( "#city" ).val() == "-" ) {
+                if ( $( "#county" ).val() != "-" ) {
+                    return;
+                }
+            }else{
+                return;
+            }
+        }else{
+            return;
+        }
+
+        sweetAlert("", "Select a field. City or County!", "error");
+        event.preventDefault();
+    });
+    </script>
     <script>
     $(document).ready(function(){
         $('#price-selector').slider({
             min: 1,
-            max: 900000,
+            max: 9999999,
             range: true,
-            steps: 75000,
-            values: [150000,750000],
+            steps: 100000,
+            values: [1,9999999],
             create: function(event, ui) {
                 $('.price-from span').text(ui.values[0]);
                 $('.price-to span').text(ui.values[1]);
@@ -264,7 +284,7 @@
                 $('#priceMin').val(ui.values[0]);
                 $('#priceMax').val(ui.values[1]);
 
-                if(ui.values[1] == 900000) {
+                if(ui.values[1] == 9999999) {
                     $(".price-to .plus").css({ display: 'inline-block' });
                 } else {
                     $(".price-to .plus").css({ display: 'none' });

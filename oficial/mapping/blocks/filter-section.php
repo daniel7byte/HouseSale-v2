@@ -47,17 +47,17 @@
                                     </select>
                                 </div>
                                 <div class="form-group" id="price-regulator">
-                                    <input type="hidden" value="150000" name="price-min" id="price-min" style="width:100%" class="form-control">
-                                    <input type="hidden" value="750000" name="price-max" id="price-max" style="width:100%" class="form-control">
+                                    <input type="hidden" value="1" name="price-min" id="price-min" style="width:100%" class="form-control">
+                                    <input type="hidden" value="9999999" name="price-max" id="price-max" style="width:100%" class="form-control">
                                     <div class="range-prices">
-                                        <div class="price-from">$<span>150000</span></div>
+                                        <div class="price-from">$<span>1</span></div>
                                         <div class="divisor">-</div>
-                                        <div class="price-to"><div class="plus" id="plus">+</div>$<span>750000</span></div>
+                                        <div class="price-to"><div class="plus" id="plus">+</div>$<span>9999999</span></div>
                                     </div>
                                     <div id="price-selector"></div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="zipcode" class="form-control" placeholder="ID">    
+                                    <input type="text" name="zipcode" class="form-control" placeholder="ID">
                                 </div>
                                 <div class="form-group">
                                     <select name="systemFiltro" id="systemFiltro" class="form-control">

@@ -119,12 +119,12 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="price" class="control-label uppercase"><?php echo FORM_LABEL6; ?></label>
-                                            <input type="hidden" value="150000" name="price-min" id="price-min" style="width:100%" class="form-control">
-                                            <input type="hidden" value="750000" name="price-max" id="price-max" style="width:100%" class="form-control">
+                                            <input type="hidden" value="1" name="price-min" id="price-min" style="width:100%" class="form-control">
+                                            <input type="hidden" value="9999999" name="price-max" id="price-max" style="width:100%" class="form-control">
                                             <div class="range-prices">
-                                                <div class="price-from">$<span>150000</span></div>
+                                                <div class="price-from">$<span>1</span></div>
                                                 <div class="divisor">-</div>
-                                                <div class="price-to">$<span>750000</span></div>
+                                                <div class="price-to">$<span>9999999</span></div>
                                             </div>
                                             <div id="price-selector"></div>
                                         </div>
@@ -172,14 +172,35 @@
         clientWindow.style.maxHeight = 'calc(100% - '+ clientWindow.offsetTop +'px)'
     })(document)
     </script>
+    <script src="../assets/sweetalert/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="../assets/sweetalert/sweetalert.css">
+
+    <script>
+    $( "form" ).submit(function( event ) {
+        if ( $( "#zipcode" ).val() == "" ) {
+            if ( $( "#city" ).val() == "-" ) {
+                if ( $( "#county" ).val() != "-" ) {
+                    return;
+                }
+            }else{
+                return;
+            }
+        }else{
+            return;
+        }
+
+        sweetAlert("", "Select a field. City or County!", "error");
+        event.preventDefault();
+    });
+    </script>
     <script>
     $(document).ready(function(){
         $('#price-selector').slider({
             min: 1,
-            max: 900000,
+            max: 9999999,
             range: true,
-            steps: 75000,
-            values: [150000,750000],
+            steps: 100000,
+            values: [1,9999999],
             create: function(event, ui) {
                 $('.price-from span').text(ui.values[0]);
                 $('.price-to span').text(ui.values[1]);
