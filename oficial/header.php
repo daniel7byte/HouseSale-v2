@@ -34,6 +34,9 @@ include("lang/langHandler.php");
 				<a href="sell.php" class="header__span-p1"><span class="header__span-p1"><?php echo MENU_ITEM3; ?></span></a>
                 </li>
                 <li class="dropdown auth__nav-item">
+                  <a href="mapping/index.php" class="header__span-p1"><span class="header__span-p1">MAPPING</span></a>
+                </li>
+                <li class="dropdown auth__nav-item">
 				<a href="contact.php" class="header__span-p1"><span class="header__span-p1"><?php echo MENU_ITEM4; ?></span></a>
                 </li>
 
@@ -53,7 +56,7 @@ include("lang/langHandler.php");
                     <ul>
                       <li class="dropdown__item"><a href="#" onclick="switchLanguage('en')" class="dropdown__link">English</a></li>
                       <li class="dropdown__item"><a href="#" onclick="switchLanguage('es')" class="dropdown__link">Español</a></li>
-                      
+
                     </ul>
                   </div>
                 </div>
