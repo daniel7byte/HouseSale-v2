@@ -45,7 +45,7 @@
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript">
         var map;
-        
+
         var styleArray = [{"featureType":"administrative.country","elementType":"labels.icon","stylers":[{"visibility":"on"}]}];
 
         $(document).ready(function(){
@@ -57,6 +57,25 @@
                 styles: styleArray
             });
 
+            // Funcion que carga las coordenadas
+            function load(str, html){
+              GMaps.geocode({
+                address: str.trim(),
+                callback: function(results, status){
+                  if(status=='OK'){
+                    var latlng = results[0].geometry.location;
+                    // map.setCenter(latlng.lat(), latlng.lng());
+                    map.addMarker({
+                      lat: latlng.lat(),
+                      lng: latlng.lng(),
+                      infoWindow: {
+                        content: html
+                      }
+                    });
+                  }
+                }
+              });
+            }
 
             //Geocoding
             <?php
@@ -69,25 +88,6 @@
                 endforeach;
             ?>
             // Fin de Geocoding
-
-            function load(str, html){
-                GMaps.geocode({
-                    address: str.trim(),
-                    callback: function(results, status){
-                        if(status=='OK'){
-                            var latlng = results[0].geometry.location;
-                            // map.setCenter(latlng.lat(), latlng.lng());
-                            map.addMarker({
-                                lat: latlng.lat(),
-                                lng: latlng.lng(),
-                                infoWindow: {
-                                  content: html
-                                }
-                            });
-                        }
-                    }
-                });
-            }
 
         });
     </script>

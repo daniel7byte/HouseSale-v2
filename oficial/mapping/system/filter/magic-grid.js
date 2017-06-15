@@ -8,7 +8,7 @@ $( document ).ready(function() {
     if(county != '-'){
       $.ajax({
         type: 'GET',
-        url: 'dinamic_filter/county-city.php',
+        url: 'system/filter/county-city.php',
         data: {
           param1 : county
         },
@@ -35,7 +35,7 @@ $( document ).ready(function() {
     if(city != '-'){
       $.ajax({
         type: 'GET',
-        url: 'dinamic_filter/city-county.php',
+        url: 'system/filter/city-county.php',
         data: {
           param1 : city
         },
@@ -96,7 +96,7 @@ function search(id, zipcode,county, city, priceMin, priceMax, systemFiltro){
 
   $.ajax({
     type: 'GET',
-    url: 'dinamic_filter/search-grid.php',
+    url: 'system/filter/search-grid.php',
     data: {
       id : id,
       zipcode : zipcode,
@@ -141,7 +141,7 @@ function reset() {
 
   $.ajax({
     type: 'GET',
-    url: 'dinamic_filter/reset.php',
+    url: 'system/filter/reset.php',
     data: {
       param1 : 'county'
     },
@@ -152,7 +152,7 @@ function reset() {
 
   $.ajax({
     type: 'GET',
-    url: 'dinamic_filter/reset.php',
+    url: 'system/filter/reset.php',
     data: {
       param1 : 'city'
     },
