@@ -205,14 +205,7 @@
                             foreach ($rows as $row):
 
                                 $price = "$" . number_format($row["dato5"]);
-
-                                $geostr = trim($row['dato7'] . ', ' . $row['dato10'] . ', '. $row['dato11'] . ', GA ' . $row['dato24'] . ', US');
-                                $geohtml = trim(
-                                    $geostr
-                                );
                         ?>
-                                <script><?=trim('loadGetGeo("'.$geostr.'", "'.$geohtml.'", "'.$row['dato2'].'");')?></script>
-
                                 <div class="col-xs-6">
                                     <div class="card set-to-marker" id="<?=$row['dato2']?>">
                                         <div class="card__thumbnail" style="background-image:url(../dinamic_filter/getImages.php?id=<?=$row['dato2']?>&w=640&h=436)"></div>
@@ -224,7 +217,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                         <?php
                             endforeach;
                         ?>
