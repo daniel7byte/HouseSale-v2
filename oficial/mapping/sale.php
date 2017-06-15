@@ -77,6 +77,17 @@
               });
             }
 
+            function loadMarket(str, html){
+              console.log(load(str));
+              map.addMarker({
+                lat: latlng.lat(),
+                lng: latlng.lng(),
+                infoWindow: {
+                  content: html
+                }
+              });
+            }
+
             //Geocoding
             <?php
                 foreach ($rows as $row):
@@ -154,7 +165,7 @@
 
                                 echo "
                                 <div class=\"col-xs-6\">
-                                    <div class=\"card\">
+                                    <div class=\"card pan-to-marker\" data-marker-lat=\"-12.04234248190257\" data-marker-lng=\"-77.02452421188354\" >
                                         <div class=\"card__thumbnail\" style=\"background-image:url(../dinamic_filter/getImages.php?id={$row['dato2']}&w=640&h=436)\"></div>
                                         <div class=\"card__content\">
                                             <div class=\"card__content__price\">{$price}</div>
