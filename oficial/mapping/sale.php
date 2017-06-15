@@ -56,49 +56,94 @@
                 zoom: 8,
                 styles: styleArray
             });
+        });
 
-            // Funcion que carga las coordenadas
-            function load(str, html){
-              GMaps.geocode({
-                address: str.trim(),
-                callback: function(results, status){
-                  if(status=='OK'){
-                    var latlng = results[0].geometry.location;
-                    // map.setCenter(latlng.lat(), latlng.lng());
-                    map.addMarker({
-                      lat: latlng.lat(),
-                      lng: latlng.lng(),
-                      infoWindow: {
-                        content: html
-                      }
-                    });
+        // Funcion que carga las coordenadas
+        function load(str, html){
+          GMaps.geocode({
+            address: str.trim(),
+            callback: function(results, status){
+              if(status=='OK'){
+                var latlng = results[0].geometry.location;
+                // map.setCenter(latlng.lat(), latlng.lng());
+                map.addMarker({
+                  lat: latlng.lat(),
+                  lng: latlng.lng(),
+                  infoWindow: {
+                    content: html
                   }
-                }
-              });
+                });
+              }
             }
+          });
+        }
 
-            function loadMarket(str, html){
-              console.log(load(str));
-              map.addMarker({
-                lat: latlng.lat(),
-                lng: latlng.lng(),
-                infoWindow: {
-                  content: html
-                }
-              });
+        function loadMarket(lat, lng, html, domId){
+          var marker = map.addMarker({
+            lat: lat,
+            lng: lng,
+            infoWindow: {
+              content: html
             }
+          });
 
-            //Geocoding
-            <?php
-                foreach ($rows as $row):
-                        $geostr = trim($row['dato7'] . ', ' . $row['dato10'] . ', '. $row['dato11'] . ', GA ' . $row['dato24'] . ', US');
-                        $geohtml = trim('
-                            <h1>Hola Mundo</h1>
-                        ');
-                        echo trim('load("'. $geostr.'", "'. $geohtml .'");');
-                endforeach;
-            ?>
-            // Fin de Geocoding
+          $("#"+domId).attr("data-marker-index", map.markers.indexOf(marker));
+        }
+
+        function loadGetGeo(str, html, domId){
+          GMaps.geocode({
+            address: str.trim(),
+            callback: function(results, status){
+              if(status == 'OK'){
+                var latlng = results[0].geometry.location;
+                var string = (latlng.lat() + '|' + latlng.lng()).split('|');
+
+                // Asigna Valores
+                $("#"+domId).attr("data-marker-lat", string[0]);
+                $("#"+domId).attr("data-marker-lng", string[1]);
+
+                // Crea market
+                loadMarket(string[0], string[1], html, domId);
+              }
+            }
+          });
+        }
+
+        $(document).on('click', '.set-to-marker', function(e) {
+          e.preventDefault();
+
+          var lat, lng;
+          var $index = $(this).data('marker-index');
+          var $lat = $(this).data('marker-lat ');
+          var $lng = $(this).data('marker-lng');
+
+          if ($index != undefined) {
+            // using indices
+
+            var $marker = map.markers[$index];
+
+            var position = $marker.getPosition();
+            lat = position.lat();
+            lng = position.lng();
+
+            map.setCenter(lat, lng);
+            map.setZoom(15);
+
+            $marker.infoWindow.open(map, $marker);
+
+          } else {
+            if ($lat != undefined || $lng != undefined) {
+              // using coordinates
+                lat = $lat;
+                lng = $lng;
+
+                map.setCenter(lat, lng);
+                map.setZoom(15);
+
+            } else {
+              console.warn("No se tienen coordenadas");
+            }
+          }
 
         });
     </script>
@@ -162,20 +207,26 @@
 
                                 $price = "$" . number_format($row["dato5"]);
 
+                                $geostr = trim($row['dato7'] . ', ' . $row['dato10'] . ', '. $row['dato11'] . ', GA ' . $row['dato24'] . ', US');
+                                $geohtml = trim(
+                                    $geostr
+                                );
+                        ?>
+                                <script><?=trim('loadGetGeo("'.$geostr.'", "'.$geohtml.'", "'.$row['dato2'].'");')?></script>
 
-                                echo "
-                                <div class=\"col-xs-6\">
-                                    <div class=\"card pan-to-marker\" data-marker-lat=\"-12.04234248190257\" data-marker-lng=\"-77.02452421188354\" >
-                                        <div class=\"card__thumbnail\" style=\"background-image:url(../dinamic_filter/getImages.php?id={$row['dato2']}&w=640&h=436)\"></div>
-                                        <div class=\"card__content\">
-                                            <div class=\"card__content__price\">{$price}</div>
-                                            <div class=\"card__content__details\">N/A</div>
-                                            <div class=\"card__content__street\">{$row["dato7"]}</div>
-                                            <div class=\"card_content__city\">{$row["dato10"]}, {$row["dato11"]}, GA {$row["dato24"]}, US</div>
+                                <div class="col-xs-6">
+                                    <div class="card set-to-marker" id="<?=$row['dato2']?>">
+                                        <div class="card__thumbnail" style="background-image:url(../dinamic_filter/getImages.php?id=<?=$row['dato2']?>&w=640&h=436)"></div>
+                                        <div class="card__content">
+                                            <div class="card__content__price"><?=$price?></div>
+                                            <div class="card__content__details">N/A</div>
+                                            <div class="card__content__street"><?=$row["dato7"]?></div>
+                                            <div class="card_content__city"><?=$row["dato10"]?>, <?=$row["dato11"]?>, GA <?=$row["dato24"]?>, US</div>
                                         </div>
                                     </div>
-                                </div>";
+                                </div>
 
+                        <?php
                             endforeach;
                         ?>
                     </div>
