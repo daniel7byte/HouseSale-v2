@@ -70,7 +70,7 @@
     <div class="range-prices">
         <div class="price-from">$<span>1</span></div>
         <div class="divisor">-</div>
-        <div class="price-to">$<span>9999999</span></div>
+        <div class="price-to"><div class="plus" id="plus">+</div>$<span>9999999</span></div>
     </div>
     <div id="price-selector"></div>
 </div>

@@ -124,7 +124,7 @@
                                             <div class="range-prices">
                                                 <div class="price-from">$<span>1</span></div>
                                                 <div class="divisor">-</div>
-                                                <div class="price-to">$<span>9999999</span></div>
+                                                <div class="price-to"><div class="plus" id="plus">+</div>$<span>9999999</span></div>
                                             </div>
                                             <div id="price-selector"></div>
                                         </div>
@@ -212,6 +212,12 @@
                 $('.price-to span').text(ui.values[1]);
                 $('#priceMin').val(ui.values[0]);
                 $('#priceMax').val(ui.values[1]);
+
+                if(ui.values[1] == 9999999) {
+                    $(".price-to .plus").css({ display: 'inline-block' });
+                } else {
+                    $(".price-to .plus").css({ display: 'none' });
+                }
             }
         });
     });

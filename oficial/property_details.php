@@ -375,9 +375,9 @@
                             <div class="worker__intro-col">
                               <div class="worker__contacts">
                                 <div class="tel"><span class="type">Tel.</span><a href="#" class="uri value">+1 <?=$result['dato30']?></a></div>
-                                
-                              
-                                
+
+
+
                               </div>
                               <!-- end of block .worker__contacts-->
                             </div>
@@ -388,7 +388,7 @@
                         <div class="clearfix"></div>
                       </div>
 
-                    
+
                     <h2 style="font-size:18px; font-weight: bold;">JOYGLE AGENT</h2>
 
 
@@ -409,9 +409,9 @@
                             <div class="worker__intro-col">
                               <div class="worker__contacts">
                                 <div class="tel"><span class="type">Tel.</span><a href="#" class="uri value">+1 404-9573940</a></div>
-                                
+
                                 <div class="email"><span class="type">Email</span><a href="#" class="uri value">p.cardona@joygle.com</a></div>
-                                
+
                               </div>
                               <!-- end of block .worker__contacts-->
                             </div>
@@ -429,7 +429,7 @@ Available 24/7.
                         </div>
                         <div class="clearfix"></div>
                       </div>
-                      
+
                       <!-- end of block .worker-->
                       <form action="https://www.tfaforms.com/responses/processor" method="POST" class="form form--flex form--property-agent js-contact-form form--properties">
                         <div class="row">
@@ -655,7 +655,7 @@ Available 24/7.
     *   Soluciona la falla del slider de precio si se entra a una pagina de
     *   listado directamente por la URL sin hacer ninguna consulta
     *  ------------------------------------------------------------------------ */
-    if(document.querySelector('#price-selector .ui-slider')) {} else {createPriceRange(150000, 750000);}
+    if(document.querySelector('#price-selector .ui-slider')) {} else {createPriceRange(1, 9999999);}
   </script>
 
   </body>

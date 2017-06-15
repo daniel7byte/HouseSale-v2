@@ -386,6 +386,12 @@
               $('.price-to span').text(ui.values[1]);
               $('#price-min').val(ui.values[0]);
               $('#price-max').val(ui.values[1]);
+
+              if(ui.values[1] == 9999999) {
+                  $(".price-to .plus").css({ display: 'inline-block' });
+              } else {
+                  $(".price-to .plus").css({ display: 'none' });
+              }
           }
       });
   });

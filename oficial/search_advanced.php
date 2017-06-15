@@ -423,7 +423,7 @@ try {
     *   Soluciona la falla del slider de precio si se entra a una pagina de
     *   listado directamente por la URL sin hacer ninguna consulta
     *  ------------------------------------------------------------------------ */
-    if(document.querySelector('#price-selector .ui-slider')) {} else {createPriceRange(150000, 750000);}
+    if(document.querySelector('#price-selector .ui-slider')) {} else {createPriceRange(1, 9999999);}
   </script>
 
   </body>
