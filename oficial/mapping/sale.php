@@ -229,8 +229,10 @@
         </div>
     </main>
     <script>
-    $(document).ready(function(){
       <?php
+
+        $count = 0;
+
           foreach ($rows as $row):
 
               $price = "$" . number_format($row["dato5"]);
@@ -242,11 +244,16 @@
                 '<p>' . $row['description'] . '</p>'
               );
 
-              echo trim('loadGetGeo("'.$geostr.'", "'.$geohtml.'", "'.$row['dato2'].'");');
+              $count += 1000;
+
+              echo trim('
+                setTimeout(function(){
+                   loadGetGeo("'.$geostr.'", "'.$geohtml.'", "'.$row['dato2'].'"); }, ' . $count . '
+                );
+              ');
 
           endforeach;
       ?>
-    });
     </script>
     <script>
     // Fixing height of main tag
