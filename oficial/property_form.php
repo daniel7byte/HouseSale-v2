@@ -1,3 +1,8 @@
+<style>
+  .price-to .plus {
+    display: none;
+  }
+</style>
 
 <script src="assets/sweetalert/sweetalert.min.js"></script>
 <link rel="stylesheet" href="assets/sweetalert/sweetalert.css">
