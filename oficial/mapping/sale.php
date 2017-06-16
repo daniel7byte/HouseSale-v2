@@ -244,7 +244,7 @@
                 '<p>' . $row['description'] . '</p>'
               );
 
-              $count += 1000;
+              $count += 500;
 
               echo trim('
                 setTimeout(function(){
