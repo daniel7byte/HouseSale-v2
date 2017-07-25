@@ -42,20 +42,20 @@ require '../resources/PHPMailer/PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
 
-// $mail->SMTPDebug = 3;                               // Enable verbose debug output
+$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp1.example.com;smtp2.example.com';  // Specify main and backup SMTP servers
+$mail->Host = 'smtp-relay.sendinblue.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'user@example.com';                 // SMTP username
-$mail->Password = 'secret';                           // SMTP password
+$mail->Username = 'p.cardona@joygle.com';                 // SMTP username
+$mail->Password = '1WApm5flangjHwJy';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
 $mail->setFrom($mailFrom, 'Mailer');
 // $mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
 $mail->addAddress($mailTo);                           // Name is optional
-$mail->addReplyTo('info@example.com', 'Information');
+$mail->addReplyTo('p.cardona@joygle.com', 'Information');
 // $mail->addCC('cc@example.com');
 // $mail->addBCC('bcc@example.com');
 
@@ -63,7 +63,7 @@ $mail->addReplyTo('info@example.com', 'Information');
 // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Here is the subject';
+$mail->Subject = 'Beta Send Mails';
 $mail->Body    = $bodyContent;
 $mail->AltBody = strip_tags($bodyContent);
 
