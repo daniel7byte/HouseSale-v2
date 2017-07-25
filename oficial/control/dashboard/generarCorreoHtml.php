@@ -55,18 +55,13 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2>Correo HTML <a href="<?=APP_URL?>dashboard/misFavoritos.php" class="btn btn-success">Ver Listado <span class="glyphicon glyphicon-list-alt"></span></a></h2>
+          <h2>Correo HTML
+            <a href="<?=APP_URL?>dashboard/misFavoritos.php" class="btn btn-success">Ver Listado <span class="glyphicon glyphicon-list-alt"></span></a>
+            <button onclick="sendMail();" class="btn btn-info">Enviar E-Mail <span class="glyphicon glyphicon-envelope"></span></button>
+          </h2>
           <hr>
-          <div class="row">
+          <div class="row" id="body">
             <div class="col-md-12">
-              
-              <!-- <div class="media" style="background-color: #f60;">
-                <div class="media-left">
-                  <a href="http://www.joygle.com/">
-                    <img class="media-object" src="http://localhost/Joygle/HouseSale-PHP/img/logo-joygle-big.png" alt="Joygle">
-                  </a>
-                </div>
-              </div> -->
 
               <?php
                 foreach ($rows as $row):
@@ -82,11 +77,11 @@
                   </div>
                   <div class="media-body">
                     <h4 class="media-heading"><?=$house['dato7']?></h4>
-                    
+
                     <?=$house['dato10'] . ', '. $house['dato11'] . ', GA ' . $house['dato24'] . ', US'?><br>
-                    
+
                     <strong>$<?=number_format($house['dato5'])?></strong><br>
-                    
+
                     <a target="_blank" href="<?=$urlMain.$house['dato2']?>">
                       <?=$urlMain.$house['dato2']?>
                     </a>
@@ -104,5 +99,22 @@
       </div>
     </div>
     <script src="<?=APP_URL?>resources/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
+    <script>
+      function sendMail(){
+        var mailDestinatario = prompt('E-Mail del destinatario:');
+        $.ajax({
+        type: 'POST',
+          url: 'sendMail.php',
+          data: {
+            mailTo: mailDestinatario,
+            body: $('#body').html(),
+            usuario_id: <?=$_SESSION['id']?>
+          },
+          success: function(result){
+            console.log(result);
+          }
+        });
+      }
+    </script>
   </body>
 </html>
