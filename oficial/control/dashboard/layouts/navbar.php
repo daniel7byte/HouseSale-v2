@@ -42,6 +42,11 @@
         <!-- <li><a href="<?=APP_URL?>dashboard/buscador.php">Buscador <span class="glyphicon glyphicon-search"></span></a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <?php
+          if($_SESSION['rol'] == 'ADMIN'){
+        ?>
+        <li><a href="<?=APP_URL?>dashboard/usuarios.php">Usuarios <span class="glyphicon glyphicon-user"></span></a></li>
+        <?php } ?>
         <li><a href="<?=APP_URL?>dashboard/misFavoritos.php">Mis Favoritos <span class="glyphicon glyphicon-star"></span></a></li>
         <li class="active"><a href="<?=APP_URL.'auth/logout.php'?>"><?=$_SESSION['usuario']?> | Salir</a></li>
       </ul>
