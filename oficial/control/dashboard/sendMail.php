@@ -41,10 +41,10 @@ $bodyContent = $_POST['body'];
 include '../resources/SendInBlue/Mailin.php';
 
 $mailin = new Mailin($mailFrom, '1WApm5fIangjHwJy');
-$mailin->addTo($mailTo, 'Pablo Cardona')
+$mailin->addTo($mailTo, '')
        ->setFrom($mailFrom, 'Pablo Cardona')
        ->setReplyTo($mailFrom,'Pablo Cardona')
-       ->setSubject('Escriba el asunto aquí')
+       ->setSubject('Joygle - E-MAIL')
        ->setText(strip_tags($bodyContent))
        ->setHtml($bodyContent);
 $res = $mailin->send();
