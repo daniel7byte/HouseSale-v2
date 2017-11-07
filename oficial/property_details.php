@@ -446,14 +446,16 @@ Available 24/7.
 
 
 
-                          <div class="form-group form-group--col-4">
-                            <label for="in-form-phone" class="control-label"><?php echo DETAILS_FORM_LABEL3 ?></label>
-                            <input id="in-form-phone" type="text" name="telephone" class="form-control">
-                          </div>
                           <div class="form-group form-group--col-4 required">
-                            <label for="in-form-email" class="control-label"><?php echo DETAILS_FORM_LABEL4 ?></label>
+                            <label for="in-form-email" class="control-label"><?php echo DETAILS_FORM_LABEL3 ?></label>
                             <input id="in-form-email" type="email" name="email" required data-parsley-trigger="change" class="form-control">
                           </div>
+
+                          <div class="form-group form-group--col-4">
+                            <label for="in-form-phone" class="control-label"><?php echo DETAILS_FORM_LABEL4 ?></label>
+                            <input id="in-form-phone" type="text" name="telephone" class="form-control">
+                          </div>
+
                           <div class="form-group required">
                             <label for="in-form-message" class="control-label"><?php echo DETAILS_FORM_LABEL5 ?> : ID (<?=$result['dato2']?>)</label>
                             <textarea id="in-form-message" name="message" required data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-validation-threshold="10" data-parsley-minlength-message="You need to enter at least a 20 caracters long comment.." class="form-control"></textarea>
