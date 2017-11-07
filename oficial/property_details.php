@@ -431,47 +431,40 @@ Available 24/7.
                       </div>
 
                       <!-- end of block .worker-->
-                      <form action="https://www.tfaforms.com/responses/processor" method="POST" class="form form--flex form--property-agent js-contact-form form--properties">
+                      <form action="ControllerEmail/send.php" method="POST" class="form form--flex form--property-agent js-contact-form form--properties">
                         <div class="row">
-
-
-
 
                           <div class="form-group form-group--col-4 required">
                             <label for="in-form-name" class="control-label"><?php echo DETAILS_FORM_LABEL1 ?></label>
-                            <input id="in-form-name" type="text" name="Name" required class="form-control">
+                            <input id="in-form-name" type="text" name="name" required class="form-control">
                           </div>
 
                           <div class="form-group form-group--col-4 required">
                             <label for="in-form-name" class="control-label"><?php echo DETAILS_FORM_LABEL2 ?></label>
-                            <input id="in-form-name-x" type="text" name="Last Name" required class="form-control">
+                            <input id="in-form-name-x" type="text" name="last_name" required class="form-control">
                           </div>
 
 
 
                           <div class="form-group form-group--col-4">
                             <label for="in-form-phone" class="control-label"><?php echo DETAILS_FORM_LABEL3 ?></label>
-                            <input id="in-form-phone" type="text" name="Phone" class="form-control">
+                            <input id="in-form-phone" type="text" name="telephone" class="form-control">
                           </div>
                           <div class="form-group form-group--col-4 required">
                             <label for="in-form-email" class="control-label"><?php echo DETAILS_FORM_LABEL4 ?></label>
-                            <input id="in-form-email" type="email" name="Email" required data-parsley-trigger="change" class="form-control">
+                            <input id="in-form-email" type="email" name="email" required data-parsley-trigger="change" class="form-control">
                           </div>
                           <div class="form-group required">
                             <label for="in-form-message" class="control-label"><?php echo DETAILS_FORM_LABEL5 ?> : ID (<?=$result['dato2']?>)</label>
-                            <textarea id="in-form-message" name="Message : ID (<?=$result['dato2']?>)" required data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-validation-threshold="10" data-parsley-minlength-message="You need to enter at least a 20 caracters long comment.." class="form-control"></textarea>
+                            <textarea id="in-form-message" name="message" required data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-validation-threshold="10" data-parsley-minlength-message="You need to enter at least a 20 caracters long comment.." class="form-control"></textarea>
                           </div>
                         </div>
+
+                        <input type="hidden" value="<?=$result['dato2']?>" name="house_id" id="house_id">
+
                         <div class="row">
                           <button type="submit" class="form__submit"><?php echo DETAILS_FORM_BTN ?></button>
                         </div>
-
-<input type="hidden" value="405259" name="tfa_dbFormId" id="tfa_dbFormId">
-<input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
-<input type="hidden" value="4aeadf90dbe8076fd36315aa4f096abe" name="tfa_dbControl" id="tfa_dbControl">
-<input type="hidden" value="7" name="tfa_dbVersionId" id="tfa_dbVersionId">
-<input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
-
 
                       </form>
                       <!-- end of block form-->
