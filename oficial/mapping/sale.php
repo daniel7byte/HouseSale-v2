@@ -239,9 +239,10 @@
 
               $geostr = trim($row['dato7'] . ', ' . $row['dato10'] . ', '. $row['dato11'] . ', GA ' . $row['dato24'] . ', US');
               $geohtml = trim(
-                '<h3>'. $geostr . '</h3>' .
-                '<strong>' . $price . '</strong>' .
-                '<p>' . $row['description'] . '</p>'
+                "<h3>". $geostr . "</h3>" .
+                "<h4>" . $price . "</h4>" .
+                "<p>" . $row["description"] . "</p>" .
+                "<a " . "href='property_details.php?id=" . '"' . $row["dato2"] . '"' . "'> More information </a>"
               );
 
               $count += 500;
