@@ -41,33 +41,9 @@
     </script>
 </head>
 <body class="main-template">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
-                    <span class="sr-only">Menu</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="./" class="navbar-brand"><img src="http://demo.joygle.com/img/logo-joygle-big.png"></a>
-            </div>
-            <div class="collapse navbar-collapse" id="main-nav">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Buy</a></li>
-                    <li><a href="#">Rent</a></li>
-                    <li><a href="#">Mortgage</a></li>
-                    <li><a href="#">Sell</a></li>
-                    <li><a href="#">Find an Agent</a></li>
-                    <li><a href="#">Local Scoop</a></li>
-                    <li><a href="#">More <span class="caret"></span></a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Sign In</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
+    <?php include("header.php"); ?>
+
     <main class="main">
         <section class="flex">
             <section class="section">
