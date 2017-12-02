@@ -505,7 +505,7 @@ Available 24/7.
                     </form>
                     <?php if ($conCookies): ?>
                       <script>
-                        setForm("<?=($_GET['formId'] != '-' ? $_GET['formId'] : '')?>", "<?=($_GET['formZipcode'] != '-' ? $_GET['formZipcode'] : '')?>", "<?=($_GET['formCounty'] != '-' ? $_GET['formCounty'] : '')?>", "<?=($_GET['formCity'] != '-' ? $_GET['formCity'] : '')?>", "<?=($_GET['formPriceMin'] != '-' ? $_GET['formPriceMin'] : '')?>", "<?=($_GET['formPriceMax'] != '-' ? $_GET['formPriceMax'] : '')?>", "<?=($_GET['formSystemFiltro'] != '-' ? $_GET['formSystemFiltro'] : '' )?>");
+                        setForm("<?=($_GET['formId'] != '-' ? $_GET['formId'] : '')?>", "<?=($_GET['formZipcode'] != '-' ? $_GET['formZipcode'] : '')?>", "<?=($_GET['formCounty'] != '-' ? $_GET['formCounty'] : '')?>", "<?=($_GET['formCity'] != '-' ? $_GET['formCity'] : '')?>", "<?=($_GET['formKeyword'] != '-' ? $_GET['formKeyword'] : '')?>", "<?=($_GET['formPriceMin'] != '-' ? $_GET['formPriceMin'] : '')?>", "<?=($_GET['formPriceMax'] != '-' ? $_GET['formPriceMax'] : '')?>", "<?=($_GET['formSystemFiltro'] != '-' ? $_GET['formSystemFiltro'] : '' )?>");
                       </script>
                     <?php endif; ?>
                     <!-- end of block-->

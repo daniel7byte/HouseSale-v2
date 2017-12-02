@@ -93,7 +93,7 @@ if(isset($_SESSION['usuario'])){
                   <h1 class="site__title" style="font-size: 28px!important;"><?php echo LISTING_RESULT ?> : <strong id="numRecords"><?=( isset($_GET['city']) ? '' : $limiteRegistros )?></strong> </h1>
                   <p id="search-string">
                     <?php if (isset($_GET['city'])): ?>
-                    <?=$_GET['zipcode']?> + <?=$_GET['county']?> + <?=$_GET['city']?> + <?=$_GET['price-min']?> - <?=$_GET['price-max']?> + <?=($_GET['systemFiltro'] == "1" ? "FMLS" : ($_GET['systemFiltro'] == "0" ? "GAMLS" : $_GET['systemFiltro'] ) )?>
+                    <?=$_GET['zipcode']?> + <?=$_GET['keyword']?> + <?=$_GET['county']?> + <?=$_GET['city']?> + <?=$_GET['price-min']?> - <?=$_GET['price-max']?> + <?=($_GET['systemFiltro'] == "1" ? "FMLS" : ($_GET['systemFiltro'] == "0" ? "GAMLS" : $_GET['systemFiltro'] ) )?>
                     <?php endif;?>
                   </p>
                 </header>
@@ -192,7 +192,7 @@ if(isset($_SESSION['usuario'])){
                     ?>
                     <script>
                         $( document ).ready(function() {
-                            search("<?=($_GET['id'] != '-' ? $_GET['id'] : '')?>", "<?=($_GET['zipcode'] != '-' ? $_GET['zipcode'] : '')?>", "<?=($_GET['county'] != '-' ? $_GET['county'] : '')?>", "<?=($_GET['city'] != '-' ? $_GET['city'] : '')?>", "<?=($_GET['price-min'] != '-' ? $_GET['price-min'] : '')?>", "<?=($_GET['price-max'] != '-' ? $_GET['price-max'] : '')?>", "<?=$_GET['systemFiltro']?>");
+                            search("<?=($_GET['id'] != '-' ? $_GET['id'] : '')?>", "<?=($_GET['zipcode'] != '-' ? $_GET['zipcode'] : '')?>", "<?=($_GET['county'] != '-' ? $_GET['county'] : '')?>", "<?=($_GET['city'] != '-' ? $_GET['city'] : '')?>", "<?=($_GET['keyword'] != '-' ? $_GET['keyword'] : '')?>", "<?=($_GET['price-min'] != '-' ? $_GET['price-min'] : '')?>", "<?=($_GET['price-max'] != '-' ? $_GET['price-max'] : '')?>", "<?=$_GET['systemFiltro']?>");
                             resetPagination();
                             concatenarLinks('grid');
                         });
@@ -230,7 +230,7 @@ if(isset($_SESSION['usuario'])){
                     <?php if (isset($_GET['city'])): ?>
                       <script>
                       $( document ).ready(function() {
-                        setForm("<?=($_GET['id'] != '-' ? $_GET['id'] : '')?>", "<?=($_GET['zipcode'] != '-' ? $_GET['zipcode'] : '')?>", "<?=($_GET['county'] != '-' ? $_GET['county'] : '')?>", "<?=($_GET['city'] != '-' ? $_GET['city'] : '')?>", "<?=($_GET['price-min'] != '-' ? $_GET['price-min'] : '')?>", "<?=($_GET['price-max'] != '-' ? $_GET['price-max'] : '')?>", "<?=$_GET['systemFiltro']?>");
+                        setForm("<?=($_GET['id'] != '-' ? $_GET['id'] : '')?>", "<?=($_GET['zipcode'] != '-' ? $_GET['zipcode'] : '')?>", "<?=($_GET['county'] != '-' ? $_GET['county'] : '')?>", "<?=($_GET['city'] != '-' ? $_GET['city'] : '')?>", "<?=($_GET['keyword'] != '-' ? $_GET['keyword'] : '')?>", "<?=($_GET['price-min'] != '-' ? $_GET['price-min'] : '')?>", "<?=($_GET['price-max'] != '-' ? $_GET['price-max'] : '')?>", "<?=$_GET['systemFiltro']?>");
                       });
                       </script>
                     <?php endif; ?>
