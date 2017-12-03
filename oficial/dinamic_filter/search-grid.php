@@ -26,26 +26,6 @@ try {
     exit;
 }
 
-// KEYWORD
-if($keyword != ''){
-
-    $query = $mysql->prepare("SELECT * FROM datoscasas WHERE dato7 LIKE :keyword AND dato24 LIKE :zipcode AND dato6 = 'A'");
-    $query->execute([
-        ':keyword' => "%$keyword%",
-        ':zipcode' => "%$zipcode%"
-    ]);
-    $rows = $query->fetchAll();
-
-    foreach ($rows as $row):
-
-        include('tpl-property-grid.php');
-
-    endforeach;
-
-    exit;
-}
-
-// IDENTIFICADOR
 if($id != ''){
 
     $query = $mysql->prepare("SELECT * FROM datoscasas WHERE dato2 LIKE :id AND dato6 = 'A'");
@@ -61,24 +41,26 @@ if($id != ''){
 }else{
 
     if($priceMax < 9999999) {
-        $queryOne = $mysql->prepare("SELECT * FROM datoscasas WHERE dato11 LIKE :county AND dato10 LIKE :city AND dato5 >= :priceMin AND dato5 <= :priceMax  AND dato6 = 'A' AND dato24 LIKE :zipcode AND id LIKE :system");
+        $queryOne = $mysql->prepare("SELECT * FROM datoscasas WHERE dato11 LIKE :county AND dato10 LIKE :city AND dato5 >= :priceMin AND dato5 <= :priceMax  AND dato6 = 'A' AND dato24 LIKE :zipcode AND dato7 LIKE :keyword AND id LIKE :system");
 
         $queryOne->execute([
             ':zipcode' => "%$zipcode%",
             ':county' => "%$county%",
             ':system' => "%$system%",
             ':city' => "%$city%",
+            ':keyword' => "%$keyword%",
             ':priceMin' => $priceMin,
             ':priceMax' => $priceMax
         ]);
     } else {
-        $queryOne = $mysql->prepare("SELECT * FROM datoscasas WHERE dato11 LIKE :county AND dato10 LIKE :city AND dato5 >= :priceMin AND dato6 = 'A' AND dato24 LIKE :zipcode AND id LIKE :system");
+        $queryOne = $mysql->prepare("SELECT * FROM datoscasas WHERE dato11 LIKE :county AND dato10 LIKE :city AND dato5 >= :priceMin AND dato6 = 'A' AND dato24 LIKE :zipcode AND dato7 LIKE :keyword AND id LIKE :system");
 
         $queryOne->execute([
             ':zipcode' => "%$zipcode%",
             ':county' => "%$county%",
             ':system' => "%$system%",
             ':city' => "%$city%",
+            ':keyword' => "%$keyword%",
             ':priceMin' => $priceMin
         ]);
     }
