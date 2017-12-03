@@ -15,7 +15,6 @@ $city = $_GET['city'];
 $priceMin = $_GET['priceMin'];
 $priceMax = $_GET['priceMax'];
 $system = $_GET['systemFiltro'];
-$keyword = $_GET['keyword'];
 
 include("../datosiniciales.php");
 
@@ -41,26 +40,24 @@ if($id != ''){
 }else{
 
     if($priceMax < 9999999) {
-        $queryOne = $mysql->prepare("SELECT * FROM datoscasas WHERE dato11 LIKE :county AND dato10 LIKE :city AND dato5 >= :priceMin AND dato5 <= :priceMax  AND dato6 = 'A' AND dato24 LIKE :zipcode AND dato7 LIKE :keyword AND id LIKE :system");
+        $queryOne = $mysql->prepare("SELECT * FROM datoscasas WHERE dato11 LIKE :county AND dato10 LIKE :city AND dato5 >= :priceMin AND dato5 <= :priceMax  AND dato6 = 'A' AND dato24 LIKE :zipcode AND id LIKE :system");
 
         $queryOne->execute([
             ':zipcode' => "%$zipcode%",
             ':county' => "%$county%",
             ':system' => "%$system%",
             ':city' => "%$city%",
-            ':keyword' => "%$keyword%",
             ':priceMin' => $priceMin,
             ':priceMax' => $priceMax
         ]);
     } else {
-        $queryOne = $mysql->prepare("SELECT * FROM datoscasas WHERE dato11 LIKE :county AND dato10 LIKE :city AND dato5 >= :priceMin AND dato6 = 'A' AND dato24 LIKE :zipcode AND dato7 LIKE :keyword AND id LIKE :system");
-
+        $queryOne = $mysql->prepare("SELECT * FROM datoscasas WHERE dato11 LIKE :county AND dato10 LIKE :city AND dato5 >= :priceMin AND dato6 = 'A' AND dato24 LIKE :zipcode AND id LIKE :system");
+       
         $queryOne->execute([
             ':zipcode' => "%$zipcode%",
             ':county' => "%$county%",
             ':system' => "%$system%",
             ':city' => "%$city%",
-            ':keyword' => "%$keyword%",
             ':priceMin' => $priceMin
         ]);
     }

@@ -33,11 +33,6 @@
     </select>
 </div>
 
-<div class="form-group" style="display:block;">
-    <label for="keyword" class="control-label">Street</label>
-    <input class="form-control" type='text' name="keyword" id="keyword" value="">
-</div>
-
 <div class="form-group">
     <label for="zipcode" class="control-label"><?php echo FORM_LABEL2; ?></label>
     <input class="form-control" type='text' name="zipcode" id="zipcode" value="">
