@@ -16307,7 +16307,12 @@ fieldset[disabled] .dropdown--select .dropdown-toggle {
 
 @media (max-width: 2000px) {
   .navbar {
-    display: none;
+    /*
+    *| AL DESCOMENTAR ESTA LINEA, GENERARÍA ERROR EN EL NAVBAR
+    *| ---------------------------------------------------------------------------
+    *| display: none;
+    *|
+    */
   }
 }
 

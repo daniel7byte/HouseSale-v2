@@ -52,8 +52,9 @@
 }  
  
 
-.header  {
-     background-color:#FF6600!important;
+.header,
+.navbar-default  {
+	background-color:#FF6600!important;
 } 
  
 .banner--wide .banner__item {
@@ -436,15 +437,28 @@ display:none;
     outline: none !important;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* SOLUCIONA PROBLEMA CON EL NAVBAR */
+.header-original {
+	height: 50px;
+	color: white;
+}
+.header-original .navbar.navbar-default .navbar-brand img {
+	position: relative;
+	bottom: .5rem;
+}
+.header-original .navbar.navbar-default li > a {
+	color: white;
+}
+.header-original .navbar.navbar-default li:hover > a {
+	background-color: rgb(252, 136, 59);
+}
+.header-original .navbar.navbar-default li > a:focus,
+.header-original .navbar.navbar-default li > a:visited {
+	background: none;
+}
+.header-original .navbar.navbar-default .dropdown li > a {
+	color: #444;
+}
+.header-original .navbar.navbar-default .dropdown li > a:hover {
+	color: white;
+}

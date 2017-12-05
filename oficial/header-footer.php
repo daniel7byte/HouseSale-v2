@@ -1,5 +1,5 @@
       <!-- BEGIN HEADER-->
-      <header class="header header--brand" style="">
+      <header class="header header--brand" style="display:none">
         <div class="container-header">
           <div class="header__row">
 		  
