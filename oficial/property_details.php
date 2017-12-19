@@ -283,7 +283,7 @@
                         </svg>
                       </dt>
                       <dd class="property__plan-title"><?php echo DETAILS_AREA ?></dd>
-                      <dd class="property__plan-value"><?=$result['dato9']?></dd>
+                      <dd class="property__plan-value"><?=$result['SquareFootage']?></dd>
                       <div style="display:none">
                           <dd class="property__plan-title">SquareFootage</dd>
                           <dd class="property__plan-value"><?=$result['SquareFootage']?></dd>
