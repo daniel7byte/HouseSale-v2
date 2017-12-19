@@ -284,6 +284,16 @@
                       </dt>
                       <dd class="property__plan-title"><?php echo DETAILS_AREA ?></dd>
                       <dd class="property__plan-value"><?=$result['dato9']?></dd>
+                      <div style="display:none">
+                          <dd class="property__plan-title">SquareFootage</dd>
+                          <dd class="property__plan-value"><?=$result['SquareFootage']?></dd>
+                          <dd class="property__plan-title">SqFtSource</dd>
+                          <dd class="property__plan-value"><?=$result['SqFtSource']?></dd>
+                          <dd class="property__plan-title">Style</dd>
+                          <dd class="property__plan-value"><?=$result['Style']?></dd>
+                          <dd class="property__plan-title">TaxID</dd>
+                          <dd class="property__plan-value"><?=$result['TaxID']?></dd>
+                      </div>
                     </dl>
                     <dl class="property__plan-item">
                       <dt class="property__plan-icon property__plan-icon--window">
