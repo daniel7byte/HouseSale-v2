@@ -18,35 +18,12 @@ if(is_readable("control/config/connection.php")) {
   require_once '../config/connection.php';
 }
 
-function getEmail($id){
-  $mysql = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
-
-  $query = $mysql->prepare("SELECT mail FROM usuarios WHERE id = :usuario_id");
-  $query->execute([
-      ':usuario_id' => $id,
-  ]);
-  $rows = $query->fetchAll();
-  foreach ($rows as $row){
-    $mailFrom = $row['mail'];
-  }
-  return $mailFrom;
-}
-
-$mailFrom = getEmail($_POST['usuario_id']);
+$mailFrom = "daniel7byte@gmail.com";
 $mailTo = $_POST['mailTo'];
 $bodyContent = $_POST['body'];
 
-// SendInBlue
+// Send
 
-include '../resources/SendInBlue/Mailin.php';
-
-$mailin = new Mailin($mailFrom, '1WApm5fIangjHwJy');
-$mailin->addTo($mailTo, '')
-       ->setFrom($mailFrom, 'Pablo Cardona')
-       ->setReplyTo($mailFrom,'Pablo Cardona')
-       ->setSubject('Joygle - E-MAIL')
-       ->setText(strip_tags($bodyContent))
-       ->setHtml($bodyContent);
-$res = $mailin->send();
+$res = "NULL";
 
 echo $res;
