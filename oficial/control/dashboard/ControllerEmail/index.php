@@ -9,17 +9,8 @@ if (!isset($_SESSION['usuario'])) {
     exit;
 }
 
-if(is_readable("../control/config/parameters.php")) {
-  include_once("../control/config/parameters.php");
-} else if (is_readable("../../config/parameters.php")) {
-  require_once '../../config/parameters.php';
-}
-
-if(is_readable("../control/config/connection.php")) {
-  include_once("../control/config/connection.php");
-} else if (is_readable("../../config/connection.php")) {
-  require_once '../../config/connection.php';
-}
+$mailTo = $_GET['mailTo'];
+$body = $_GET['body'];
 
 /**
  * This example shows settings to use when sending via Google's Gmail servers.
@@ -63,14 +54,14 @@ $mail->Password = "@Entrada1";                        //Password to use for SMTP
 //Recipients
 $mail->setFrom('info@joygle.com', 'Joygle Inc');
 $mail->addAddress('info@joygle.com', 'Joygle Inc');          // Add a recipient & Name is optional
-$mail->addAddress($_GET['mailTo']);
+$mail->addAddress($mailTo);
 //$mail->addAddress('daniel7byte@gmail.com', 'Jose Daniel Posso Garcia');
 $mail->addReplyTo('info@joygle.com', 'Joygle Inc');
 
 //Content
 $mail->isHTML(true);                                  // Set email format to HTML
 $mail->Subject = 'Title : ??? | ' . date('r'); // ISO 8601
-$mail->Body    = $_GET['body'];
+$mail->Body    = $body;
 $mail->AltBody = 'New message of Joygle';
 
 //send the message, check for errors
