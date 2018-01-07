@@ -102,12 +102,13 @@
     <script>
       function sendMail(){
         var mailDestinatario = prompt('E-Mail del destinatario:');
+        var body = $('#body').html();
         $.ajax({
-        type: 'GET',
+          type: 'POST',
           url: 'ControllerEmail/index.php',
           data: {
             mailTo: mailDestinatario,
-            body: $('#body').html()
+            body: body
           },
           success: function(result){
             console.log(result);

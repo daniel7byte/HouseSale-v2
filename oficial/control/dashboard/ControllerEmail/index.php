@@ -5,12 +5,12 @@ date_default_timezone_set('America/New_York');
 
 session_start();
 if (!isset($_SESSION['usuario'])) {
-    header('Location: ' . APP_URL . 'index.php');
-    exit;
+    // header('Location: ../index.php');
+    // exit;
 }
 
-$mailTo = $_GET['mailTo'];
-$body = $_GET['body'];
+$mailTo = $_POST['mailTo'];
+$body = $_POST['body'];
 
 /**
  * This example shows settings to use when sending via Google's Gmail servers.
@@ -37,6 +37,8 @@ $mail->SMTPOptions = array(
     )
 );
 
+$mail->CharSet = "UTF-8";
+
 //Enable SMTP debugging
 // 0 = off (for production use)
 // 1 = client messages
@@ -61,10 +63,14 @@ $mail->addReplyTo('info@joygle.com', 'Joygle Inc');
 //Content
 $mail->isHTML(true);                                  // Set email format to HTML
 $mail->Subject = 'Title : ??? | ' . date('r'); // ISO 8601
-$mail->Body    = $body;
+$mail->Body    = 'Body: ' . $body;
 $mail->AltBody = 'New message of Joygle';
 
 //send the message, check for errors
+
+var_dump($_POST);
+echo 'Versión actual de PHP: ' . phpversion();
+
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
