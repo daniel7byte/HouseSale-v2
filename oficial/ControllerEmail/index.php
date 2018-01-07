@@ -3,24 +3,6 @@
 //TIMEZONE
 date_default_timezone_set('America/New_York');
 
-session_start();
-if (!isset($_SESSION['usuario'])) {
-    header('Location: ' . APP_URL . 'index.php');
-    exit;
-}
-
-if(is_readable("../control/config/parameters.php")) {
-  include_once("../control/config/parameters.php");
-} else if (is_readable("../../config/parameters.php")) {
-  require_once '../../config/parameters.php';
-}
-
-if(is_readable("../control/config/connection.php")) {
-  include_once("../control/config/connection.php");
-} else if (is_readable("../../config/connection.php")) {
-  require_once '../../config/connection.php';
-}
-
 /**
  * This example shows settings to use when sending via Google's Gmail servers.
  * This uses traditional id & password authentication - look at the gmail_xoauth.phps
@@ -63,15 +45,21 @@ $mail->Password = "@Entrada1";                        //Password to use for SMTP
 //Recipients
 $mail->setFrom('info@joygle.com', 'Joygle Inc');
 $mail->addAddress('info@joygle.com', 'Joygle Inc');          // Add a recipient & Name is optional
-$mail->addAddress($_POST['mailTo']);
 //$mail->addAddress('daniel7byte@gmail.com', 'Jose Daniel Posso Garcia');
 $mail->addReplyTo('info@joygle.com', 'Joygle Inc');
 
 //Content
 $mail->isHTML(true);                                  // Set email format to HTML
-$mail->Subject = 'Title : ??? | ' . date('r'); // ISO 8601
-$mail->Body    = $_POST['body'];
-$mail->AltBody = 'New message of Joygle';
+$mail->Subject = 'This is a try: <' . $_POST['name'] . '>' . date('r'); // ISO 8601
+$mail->Body    = '
+' . $_POST['name'] . '<br>
+' . $_POST['last_name'] . '<br>
+' . $_POST['email'] . '<br>
+' . $_POST['telephone'] . '<br>
+' . $_POST['message'] . '<br>
+' . $_POST['house_id'] . '<br>
+';
+$mail->AltBody = 'New message of Joygle : ID (' . $_POST['house_id'] . ')';
 
 //send the message, check for errors
 if (!$mail->send()) {
@@ -79,4 +67,3 @@ if (!$mail->send()) {
 } else {
     echo "Done!";
 }
-?>

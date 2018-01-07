@@ -103,8 +103,8 @@
       function sendMail(){
         var mailDestinatario = prompt('E-Mail del destinatario:');
         $.ajax({
-        type: 'POST',
-          url: 'sendMail.php',
+        type: 'GET',
+          url: 'ControllerEmail/index.php',
           data: {
             mailTo: mailDestinatario,
             body: $('#body').html()
