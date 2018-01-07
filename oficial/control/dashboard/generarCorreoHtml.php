@@ -107,8 +107,7 @@
           url: 'sendMail.php',
           data: {
             mailTo: mailDestinatario,
-            body: $('#body').html(),
-            usuario_id: <?=$_SESSION['id']?>
+            body: $('#body').html()
           },
           success: function(result){
             console.log(result);
