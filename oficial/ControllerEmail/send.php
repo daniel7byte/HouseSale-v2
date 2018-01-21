@@ -35,7 +35,7 @@ $mail->Port = 587;                                    //Set the SMTP port number
 $mail->SMTPSecure = 'tls';                            //Set the encryption system to use - ssl (deprecated) or tls
 $mail->SMTPAuth = true;                               //Whether to use SMTP authentication
 $mail->Username = "info@joygle.com";                  //Username to use for SMTP authentication - use full email address for gmail
-$mail->Password = "@Entrada1";                        //Password to use for SMTP authentication
+$mail->Password = "*********";                        //Password to use for SMTP authentication
 
 
 //Recipients
