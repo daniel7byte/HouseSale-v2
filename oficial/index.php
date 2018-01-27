@@ -364,37 +364,5 @@
       <!-- BEGIN analytics.google -->
 <?php include("google-analytics.php"); ?>
       <!-- END analytics.google -->
-
-
-  <!-- PRICE RANGE PLUGIN -->
-  <script>
-  $(document).ready(function(){
-      $('#price-selector').slider({
-          min: 1,
-          max: 9999999,
-          range: true,
-          steps: 100000,
-          values: [1,9999999],
-          create: function(event, ui) {
-              $('.price-from span').text(ui.values[0]);
-              $('.price-to span').text(ui.values[1]);
-              $('#price-min').val(ui.values[0]);
-              $('#price-max').val(ui.values[1]);
-          },
-          slide: function(event, ui) {
-              $('.price-from span').text(ui.values[0]);
-              $('.price-to span').text(ui.values[1]);
-              $('#price-min').val(ui.values[0]);
-              $('#price-max').val(ui.values[1]);
-
-              if(ui.values[1] == 9999999) {
-                  $(".price-to .plus").css({ display: 'inline-block' });
-              } else {
-                  $(".price-to .plus").css({ display: 'none' });
-              }
-          }
-      });
-  });
-  </script>
   </body>
 </html>

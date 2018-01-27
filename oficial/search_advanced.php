@@ -415,16 +415,5 @@ try {
 <?php include("google-analytics.php"); ?>
       <!-- END analytics.google -->
 
-
-  <!-- PRICE RANGE PLUGIN -->
-  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-    /* --------------------------------------------------------------------------
-    *   Soluciona la falla del slider de precio si se entra a una pagina de
-    *   listado directamente por la URL sin hacer ninguna consulta
-    *  ------------------------------------------------------------------------ */
-    if(document.querySelector('#price-selector .ui-slider')) {} else {createPriceRange(1, 9999999);}
-  </script>
-
   </body>
 </html>

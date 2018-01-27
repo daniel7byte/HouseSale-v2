@@ -68,16 +68,10 @@
     </select>
 </div>
 
-<div class="form-group" style="min-width:100% !important">
-    <label for="price" class="control-label"><?php echo FORM_LABEL6; ?></label>
-    <input type="hidden" value="1" name="price-min" id="price-min" style="width:100%" class="form-control">
-    <input type="hidden" value="9999999" name="price-max" id="price-max" style="width:100%" class="form-control">
-    <div class="range-prices">
-        <div class="price-from">$<span>1</span></div>
-        <div class="divisor">-</div>
-        <div class="price-to"><div class="plus" id="plus">+</div>$<span>9999999</span></div>
-    </div>
-    <div id="price-selector"></div>
+<div class="form-group">
+    <label for="price" class="control-label"><?= FORM_LABEL6 ?></label>
+    <input type=number name=price-min min=1 class=form-control placeholder="Min" style="margin-bottom: 1rem">
+    <input type=number name=price-max max=99999999 class=form-control placeholder="Max">
 </div>
 
 <div class="form-group" style="display:block;">
