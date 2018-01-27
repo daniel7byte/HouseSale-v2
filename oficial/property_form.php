@@ -70,8 +70,8 @@
 
 <div class="form-group">
     <label for="price" class="control-label"><?= FORM_LABEL6 ?></label>
-    <input type=number name=price-min min=1 class=form-control placeholder="Min" style="margin-bottom: 1rem">
-    <input type=number name=price-max max=99999999 class=form-control placeholder="Max">
+    <input type=number name=price-min value=<?= ($_GET['price-min']) ?? 1 ?> min=1 class=form-control placeholder="Min" style="margin-bottom: 1rem" id="price-min">
+    <input type=number name=price-max value=<?= ($_GET['price-max']) ?? 99999999 ?> max=99999999 class=form-control placeholder="Max" id="price-max">
 </div>
 
 <div class="form-group" style="display:block;">
