@@ -38,7 +38,8 @@
       var user = prompt("Usuario: ");
       var mail = prompt("Mail: ");
       var password = prompt("Contraseña: ");
-      var rol = prompt("Rol, dijite: \n 1.Admin \n 2.User");
+      //var rol = prompt("Rol, dijite: \n 1.Admin \n 2.User");
+      var rol = 1;
       if (user && mail && password && rol) {
 
         $.ajax({
