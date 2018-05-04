@@ -1,4 +1,4 @@
-var constanteBusqueda= 21;
+var constanteBusqueda= 100;
 
 $(document).ready(function () {
   size_li = $("#articles .contador").length;
