@@ -74,7 +74,41 @@
     <input type=number name=price-max value=<?= ($_GET['price-max']) ?? 99999999 ?> max=99999999 class=form-control placeholder="Max" id="price-max">
 </div>
 
+<!-- Daterangepicker -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
 <div class="form-group" style="display:block;">
+    <label for="datefilter" class="control-label">DATE</label>
+    <!-- <input class="form-control" type='text' name="datefilter" id="datefilter" value=""> -->
+    <input type="text" class="form-control" name="datefilter" id="datefilter" value="" />
+</div>
+
+<script type="text/javascript">
+$(function() {
+
+  $('input[name="datefilter"]').daterangepicker({
+      autoUpdateInput: false,
+      locale: {
+          cancelLabel: 'Clear'
+      }
+  });
+
+  $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('YYYY-MM-DD') + ' & ' + picker.endDate.format('YYYY-MM-DD'));
+  });
+
+  $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+      $(this).val('');
+  });
+
+});
+</script>
+<!-- End Daterangepicker -->
+
+<div class="form-group" style="display:none;">
     <label for="id" class="control-label">ID</label>
     <input class="form-control" type='text' name="id" id="id" value="">
 </div>
