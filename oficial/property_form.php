@@ -91,6 +91,7 @@ $(function() {
 
   $('input[name="datefilter"]').daterangepicker({
       autoUpdateInput: false,
+      autoApply: true,
       locale: {
           cancelLabel: 'Clear',
           format: 'YYYY-MM-DD'
