@@ -69,6 +69,7 @@ $( document ).ready(function() {
   $("#search").click(function() {
 
     var id = $('#id').val(),
+        datefilter = $('#datefilter').val(),
         zipcode = $('#zipcode').val(),
         county = $('#county').val(),
         city = $('#city').val(),
@@ -84,13 +85,13 @@ $( document ).ready(function() {
       city = '';
     }
 
-    search(id, zipcode,county, city, priceMin, priceMax, systemFiltro);
+    search(id, datefilter, zipcode,county, city, priceMin, priceMax, systemFiltro);
 
   });
 
 });
 
-function search(id, zipcode,county, city, priceMin, priceMax, systemFiltro){
+function search(id, datefilter, zipcode,county, city, priceMin, priceMax, systemFiltro){
 
   $('#noRecords').hide( 1000 );
 
@@ -99,6 +100,7 @@ function search(id, zipcode,county, city, priceMin, priceMax, systemFiltro){
     url: 'dinamic_filter/search-grid.php',
     data: {
       id : id,
+      datefilter: datefilter,
       zipcode : zipcode,
       county : county,
       city : city,
