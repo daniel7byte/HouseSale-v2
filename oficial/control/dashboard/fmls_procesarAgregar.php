@@ -59,8 +59,13 @@ while ($data = fgetcsv($file, 1000, ",")) {
 
   $status = ($data['2'] == 'Active' ? 'A' : $data['2']);
 
+  			 // MES / DIA / AÑO
+  $ListDate = explode('/', $data['16']);
+         // AÑO - MES - DIA
+  $ListDate = $ListDate[2] . '-' . $ListDate[0] . '-' . $ListDate[1];
+
   $queryUpdate = $mysql->query('INSERT INTO datoscasas (id, dato1, dato2, dato3, dato4, dato5, dato6, dato7, dato8, dato9, dato10, dato11, dato12, dato13, dato14, dato15, dato16, dato17, dato18, dato19, dato20, dato21, dato22, dato23, dato24, dato25, dato26, dato27, dato28) 
-VALUES ("1", "", "'.$data['1'].'", "", "'.$data['3'].'", "'.num($data['4']).'", "'.$data['5'].'", "'.$data['6'].'", "", "'.$data['8'].'", "'.$data['9'].'", "'.$data['10'].'", "'.$data['11'].'", "'.$data['12'].'", "'.$data['13'].'", "'.$data['14'].'", "", "", "'.$data['16'].'", "'.$data['17'].'", "'.$data['18'].'", "", "", "", "", "", "", "", "")');
+VALUES ("1", "", "'.$data['1'].'", "", "'.$data['3'].'", "'.num($data['4']).'", "'.$data['5'].'", "'.$data['6'].'", "", "'.$data['8'].'", "'.$data['9'].'", "'.$data['10'].'", "'.$data['11'].'", "'.$data['12'].'", "'.$data['13'].'", "'.$data['14'].'", "", "", "'.$ListDate.'", "'.$data['17'].'", "'.$data['18'].'", "", "", "", "", "", "", "", "")');
   if ($queryUpdate) {
     echo "OK (".$data['1'].")";
   }else{
