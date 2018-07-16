@@ -68,9 +68,6 @@ $mail->AltBody = 'New message of Joygle';
 
 //send the message, check for errors
 
-var_dump($_POST);
-echo 'Versión actual de PHP: ' . phpversion();
-
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
