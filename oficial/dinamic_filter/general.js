@@ -155,15 +155,18 @@ function concatenarLinks(tipoListing) {
   var priceMax = $('input#price-max', searchForm).val();
   var systemFiltro = $('select#systemFiltro', searchForm).val();
   var id = $('input#id', searchForm).val();
+  var datefilter = $('input#datefilter', searchForm).val();
+
+  var todosLosCampos = '&formZipcode='+zipcode+'&formCounty='+county+'&formCity='+city+'&formPriceMin='+priceMin+'&formPriceMax='+priceMax+'&formSystemFiltro='+systemFiltro+'&formId='+id+'&formDateFilter='+datefilter;
 
   $('.contador > .properties > .properties__thumb > a').each(function (index) {
     var cadena = $(this).attr( "href" );
-    $(this).attr( "href", cadena + '&formZipcode='+zipcode+'&formCounty='+county+'&formCity='+city+'&formPriceMin='+priceMin+'&formPriceMax='+priceMax+'&formSystemFiltro='+systemFiltro+'&formId='+id);
+    $(this).attr( "href", cadena + todosLosCampos);
   });
 
   $('.contador > .properties > .properties__details > .properties__info > a').each(function (index) {
     var cadena = $(this).attr( "href" );
-    $(this).attr( "href", cadena + '&formZipcode='+zipcode+'&formCounty='+county+'&formCity='+city+'&formPriceMin='+priceMin+'&formPriceMax='+priceMax+'&formSystemFiltro='+systemFiltro+'&formId='+id);
+    $(this).attr( "href", cadena + todosLosCampos);
   });
 
 
@@ -171,7 +174,7 @@ function concatenarLinks(tipoListing) {
 
     $('.contador > .properties > .properties__details > a').each(function (index) {
       var cadena = $(this).attr( "href" );
-      $(this).attr( "href", cadena + '&formZipcode='+zipcode+'&formCounty='+county+'&formCity='+city+'&formPriceMin='+priceMin+'&formPriceMax='+priceMax+'&formSystemFiltro='+systemFiltro+'&formId='+id);
+      $(this).attr( "href", cadena + todosLosCampos);
     });
 
   }
