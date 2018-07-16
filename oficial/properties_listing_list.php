@@ -248,7 +248,7 @@ becomes
                 ?>
                 <script>
                     $( document ).ready(function() {
-                        search("<?=($_GET['id'] != '-' ? $_GET['id'] : '')?>", "<?=($_GET['zipcode'] != '-' ? $_GET['zipcode'] : '')?>", "<?=($_GET['county'] != '-' ? $_GET['county'] : '')?>", "<?=($_GET['city'] != '-' ? $_GET['city'] : '')?>", "<?=($_GET['price-min'] != '-' ? $_GET['price-min'] : '')?>", "<?=($_GET['price-max'] != '-' ? $_GET['price-max'] : '')?>", "<?=$_GET['systemFiltro']?>");
+                        search("<?=($_GET['id'] != '-' ? $_GET['id'] : '')?>", "<?=($_GET['datefilter'] != '-' ? $_GET['datefilter'] : '')?>", "<?=($_GET['zipcode'] != '-' ? $_GET['zipcode'] : '')?>", "<?=($_GET['county'] != '-' ? $_GET['county'] : '')?>", "<?=($_GET['city'] != '-' ? $_GET['city'] : '')?>", "<?=($_GET['price-min'] != '-' ? $_GET['price-min'] : '')?>", "<?=($_GET['price-max'] != '-' ? $_GET['price-max'] : '')?>", "<?=$_GET['systemFiltro']?>");
                         resetPagination();
                         concatenarLinks('list');
                     });
@@ -285,7 +285,7 @@ becomes
                 <?php if (isset($_GET['city'])): ?>
                   <script>
                   $( document ).ready(function() {
-                    setForm("<?=($_GET['id'] != '-' ? $_GET['id'] : '')?>", "<?=($_GET['zipcode'] != '-' ? $_GET['zipcode'] : '')?>", "<?=($_GET['county'] != '-' ? $_GET['county'] : '')?>", "<?=($_GET['city'] != '-' ? $_GET['city'] : '')?>", "<?=($_GET['price-min'] != '-' ? $_GET['price-min'] : '')?>", "<?=($_GET['price-max'] != '-' ? $_GET['price-max'] : '')?>", "<?=$_GET['systemFiltro']?>");
+                    setForm("<?=($_GET['id'] != '-' ? $_GET['id'] : '')?>", "<?=($_GET['datefilter'] != '-' ? $_GET['datefilter'] : '')?>", "<?=($_GET['zipcode'] != '-' ? $_GET['zipcode'] : '')?>", "<?=($_GET['county'] != '-' ? $_GET['county'] : '')?>", "<?=($_GET['city'] != '-' ? $_GET['city'] : '')?>", "<?=($_GET['price-min'] != '-' ? $_GET['price-min'] : '')?>", "<?=($_GET['price-max'] != '-' ? $_GET['price-max'] : '')?>", "<?=$_GET['systemFiltro']?>");
                   });
                   </script>
                 <?php endif; ?>

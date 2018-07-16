@@ -37,7 +37,7 @@ function createPriceRange(min, max) {
 *   Mantiene la información de busqueda del usuario en todas las paginas
 *   haciendo que el formulario sea inteligente.
 *  ------------------------------------------------------------------------ */
-function setForm(id, zipcode, county, city, priceMin, priceMax, systemFiltro){
+function setForm(id, datefilter, zipcode, county, city, priceMin, priceMax, systemFiltro){
   let searchForm = $("#searchForm")
   let form__county = $("select#county", searchForm)
   let form__city = $("select#city", searchForm)
@@ -47,6 +47,11 @@ function setForm(id, zipcode, county, city, priceMin, priceMax, systemFiltro){
   $("input#id", searchForm).val(id)
   $("input#price-min", searchForm).val(priceMin)
   $("input#price-max", searchForm).val(priceMax)
+  
+  let form__datafilter = $("input#datefilter", searchForm).val().split(' - ');
+  $("input#datefilter", searchForm).val(datefilter)
+  $('input#datefilter').data('daterangepicker').setStartDate(form__datafilter[0]);
+  $('input#datefilter').data('daterangepicker').setEndDate(form__datafilter[1]);
 
   // Recorrer cada county del formulario.
   for(i=0; i < $("option", form__county).length; i++) {

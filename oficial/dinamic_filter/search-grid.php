@@ -19,7 +19,7 @@ $system = $_GET['systemFiltro'];
 
 if ($datefilter != '') {
     $dateStatus = true;
-    $datefilter = explode(' & ', $datefilter);
+    $datefilter = explode(' - ', $datefilter);
     $dateStart = $datefilter[0];
     $dateEnd = $datefilter[1];
 }
