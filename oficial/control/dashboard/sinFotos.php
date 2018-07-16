@@ -18,26 +18,20 @@
 
     $archivo = $dato2 . $formato;
 
-    $directorio = '../../oficial/img/casas/00000/' . $archivo;
+    $directorio = '../../img/casas/00000/' . $archivo;
 
-    if(file_exists($directorio) == true){
-      return true;
-    }else{
-      return false;
-    }
+    return file_exists($directorio);
   }
   
-  $queryFMLS = $mysql->prepare("SELECT id, dato2 FROM datoscasas WHERE id = 1 ORDER BY dato18 DESC");
+  $queryFMLS = $mysql->prepare("SELECT dato2 FROM datoscasas WHERE id = 1");
   $queryFMLS->execute();
   $rowsFMLS = $queryFMLS->fetchAll();
 
-  $queryGAMLS = $mysql->prepare("SELECT id, dato2 FROM datoscasas WHERE id = 0 ORDER BY dato18 DESC");
+  $queryGAMLS = $mysql->prepare("SELECT dato2 FROM datoscasas WHERE id = 0");
   $queryGAMLS->execute();
   $rowsGAMLS = $queryGAMLS->fetchAll();
 
   $comasFormato = ',';
-
-  $contador = 0;
 
 ?>
 <!DOCTYPE html>
@@ -76,11 +70,22 @@
                 <div class="well">
                   <?php
                   $contadorFMLS = 0;
+
                   foreach ($rowsFMLS as $row):
-                    if (validatorDir($row['id'], $row['dato2']) == false):
+                    if (validatorDir(1, $row['dato2']) == false):
+                      echo $row['dato2'] . $comasFormato;
+                      $RestanteContadorFMLS++;
+                    endif;
+                  endforeach;
+
+                  foreach ($rowsFMLS as $row):
+                    if (validatorDir(1, $row['dato2']) == false):
                       echo $row['dato2'] . $comasFormato;
                       $contadorFMLS++;
-                      $contador++;
+
+                      if ($contadorFMLS == 800) {
+                        break;
+                      }
                     endif;
                   endforeach;
                 ?>
@@ -96,11 +101,22 @@
                 <div class="well">
                   <?php
                     $contadorGAMLS = 0;
+
                     foreach ($rowsGAMLS as $row):
-                      if (validatorDir($row['id'], $row['dato2']) == false):
+                      if (validatorDir(0, $row['dato2']) == false):
+                        echo $row['dato2'] . $comasFormato;
+                        $RestanteContadorGAMLS++;
+                      endif;
+                    endforeach;
+
+                    foreach ($rowsGAMLS as $row):
+                      if (validatorDir(0, $row['dato2']) == false):
                         echo $row['dato2'] . $comasFormato;
                         $contadorGAMLS++;
-                        $contador++;
+
+                        if ($contadorGAMLS == 800) {
+                          break;
+                        }
                       endif;
                     endforeach;
                   ?>
@@ -111,7 +127,7 @@
           </div>
         </div>
         <hr>
-        <h1 style="float: right;">Total: <?=number_format($contador)?></h1>
+        <h1 style="float: right;">RESTAN: <?=number_format($RestanteContadorFMLS + $RestanteContadorGAMLS)?></h1>
       </div>
     </div>
     <script src="<?=APP_URL?>resources/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
