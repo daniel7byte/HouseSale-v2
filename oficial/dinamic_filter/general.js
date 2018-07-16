@@ -47,11 +47,14 @@ function setForm(id, datefilter, zipcode, county, city, priceMin, priceMax, syst
   $("input#id", searchForm).val(id)
   $("input#price-min", searchForm).val(priceMin)
   $("input#price-max", searchForm).val(priceMax)
-  
-  let form__datafilter = datefilter.split(' - ');
+
   $("#datefilter", searchForm).val(datefilter);
-  $('#datefilter').data('daterangepicker').setStartDate(form__datafilter[0]);
-  $('#datefilter').data('daterangepicker').setEndDate(form__datafilter[1]);
+  
+  if (datefilter != '') {
+    let form__datafilter = datefilter.split(' - ');
+    $('#datefilter').data('daterangepicker').setStartDate(form__datafilter[0]);
+    $('#datefilter').data('daterangepicker').setEndDate(form__datafilter[1]);
+  }
 
   // Recorrer cada county del formulario.
   for(i=0; i < $("option", form__county).length; i++) {
