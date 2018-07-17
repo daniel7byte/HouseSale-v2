@@ -9,7 +9,6 @@ if(isset($_SESSION['usuario'])){
 }
 
 $id = $_GET['id'];
-$datefilter = $_GET['datefilter'];
 $zipcode = $_GET['zipcode'];
 $county = $_GET['county'];
 $city = $_GET['city'];
@@ -17,9 +16,11 @@ $priceMin = $_GET['priceMin'];
 $priceMax = $_GET['priceMax'];
 $system = $_GET['systemFiltro'];
 
-if ($datefilter != '') {
+$dateStatus = false;
+
+if ($_GET['datefilter'] != '') {
     $dateStatus = true;
-    $datefilter = explode(' - ', $datefilter);
+    $datefilter = explode(' - ', $_GET['datefilter']);
     $dateStart = $datefilter[0];
     $dateEnd = $datefilter[1];
 }
