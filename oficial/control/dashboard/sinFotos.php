@@ -70,10 +70,10 @@
                 <div class="well">
                   <?php
                   $contadorFMLS = 0;
+                  $RestanteContadorFMLS = 0;
 
                   foreach ($rowsFMLS as $row):
                     if (validatorDir(1, $row['dato2']) == false):
-                      echo $row['dato2'] . $comasFormato;
                       $RestanteContadorFMLS++;
                     endif;
                   endforeach;
@@ -101,10 +101,10 @@
                 <div class="well">
                   <?php
                     $contadorGAMLS = 0;
+                    $RestanteContadorGAMLS = 0;
 
                     foreach ($rowsGAMLS as $row):
                       if (validatorDir(0, $row['dato2']) == false):
-                        echo $row['dato2'] . $comasFormato;
                         $RestanteContadorGAMLS++;
                       endif;
                     endforeach;
