@@ -1,4 +1,3 @@
-
 <?php
 
   if(!isset($_GET['id'])){
@@ -34,7 +33,7 @@
 <html>
   <head lang="en">
     <meta charset="UTF-8">
-    <title>Joygle - <?=$result['dato7']?></title><!--[if IE]>
+    <title>Joygle - <?=$result['dato7']?> - 2018</title><!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, shrink-to-fit=no">
     <meta name="format-detection" content="telephone=no">
@@ -79,6 +78,20 @@
     <script type="text/javascript" src="assets/js/vendor.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+		<!-- Google Web Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Poiret+One|Raleway:400,300,500,600,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
+		
+		<!-- Font Awesome Version - 4.6.3 -->
+		<link href="modal/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" media="all">
+
+		<!-- Bootstrap Style Sheet Version - 3.3.6 -->
+		<link href="modal/css/bootstrap.min.css" rel="stylesheet" media="all">
+
+		<!-- Responsive Bootstrap Modal Popup Main Style Sheet -->
+		<link href="modal/css/responsive_bootstrap_modal_popup.css" rel="stylesheet" media="all">
+
 
 
   </head>
@@ -282,7 +295,7 @@
                           <use xlink:href="#icon-area"></use>
                         </svg>
                       </dt>
-                      <dd class="property__plan-title"><?php echo DETAILS_AREA ?></dd>
+                      <dd class="property__plan-title">Square Footage<!--?php echo DETAILS_AREA ?--></dd>
                       <dd class="property__plan-value"><?=$result['SquareFootage']?></dd>
                       <div style="display:none">
                           <dd class="property__plan-title">SquareFootage</dd>
@@ -365,45 +378,13 @@
                   <div class="widget js-widget widget--details">
                     <div class="widget__content">
 
-                    <h2 style="font-size:18px; font-weight: bold;">LISTING AGENT</h2>
-
-
-                      <div data-sr="enter bottom move 80px, scale(0), over 0s" data-animate-end="animate-end" class="worker js-unhide-block vcard worker--list worker--details">
-                        <div class="worker__photo"><img src="assets/media-demo/workers/worker-0.jpg" alt=""     width="50%!important;" height="50%!important;" ;  />
-                            </div>
-                        <div class="worker__intro">
-                          <div class="worker__intro-head">
-                            <div class="worker__intro-name">
-                              <h3 class="worker__name fn"><?=$result['dato29']?></h3>
-                              <div class="worker__post">Listing Agent</div>
-                            </div>
-
-                            <!-- end of block .worker__listings-->
-                          </div>
-                          <button type="button" class="worker__show js-unhide">Contact agent</button>
-                          <div class="worker__intro-row">
-                            <div class="worker__intro-col">
-                              <div class="worker__contacts">
-                                <div class="tel"><span class="type">Tel.</span><a href="#" class="uri value">+1 <?=$result['dato30']?></a></div>
-
-
-
-                              </div>
-                              <!-- end of block .worker__contacts-->
-                            </div>
-
-                          </div>
-
-                        </div>
-                        <div class="clearfix"></div>
-                      </div>
 
 
                     <h2 style="font-size:18px; font-weight: bold;">JOYGLE AGENT</h2>
 
 
                       <div data-sr="enter bottom move 80px, scale(0), over 0s" data-animate-end="animate-end" class="worker js-unhide-block vcard worker--list worker--details">
-                        <div class="worker__photo"><a href="#" class="item-photo item-photo--static"><img src="assets/media-demo/workers/worker-1.jpg" alt="Christopher Pakulla" class="photo"/>
+                        <div class="worker__photo"><a href="#" class="item-photo item-photo--static"><img src="assets/media-demo/workers/worker-1c.jpg" alt="Christopher Pakulla" class="photo"/>
                             <figure class="item-photo__hover"></figure></a></div>
                         <div class="worker__intro">
                           <div class="worker__intro-head">
@@ -436,50 +417,193 @@ Available 24/7.
                              </p>
                             </div>
                           </div>
+						  
+<a data-toggle="modal" href="#modal1" class="rbm_modal_trigger" data-backdrop="true">Contact US</a>								  
+						  
                         </div>
                         <div class="clearfix"></div>
                       </div>
 
-                      <!-- end of block .worker-->
-                      <form action="ControllerEmail/send.php" method="POST" class="form form--flex form--property-agent js-contact-form form--properties">
-                        <div class="row">
+			  
+<br>					  
 
-                          <div class="form-group form-group--col-4 required">
-                            <label for="in-form-name" class="control-label"><?php echo DETAILS_FORM_LABEL1 ?></label>
-                            <input id="in-form-name" type="text" name="name" required class="form-control">
+                      <div data-sr="enter bottom move 80px, scale(0), over 0s" data-animate-end="animate-end" class="worker js-unhide-block vcard worker--list worker--details">
+                        <div class="worker__photo"><a href="#" class="item-photo item-photo--static"><img src="assets/media-demo/workers/worker-2a.jpg" alt="Christopher Pakulla" class="photo"/>
+                            <figure class="item-photo__hover"></figure></a></div>
+                        <div class="worker__intro">
+                          <div class="worker__intro-head">
+                            <div class="worker__intro-name">
+                              <h3 class="worker__name fn">Alejandra Sandoval</h3>
+                              <div class="worker__post">Real Estate Agent</div>
+                            </div>
+
+                            <!-- end of block .worker__listings-->
                           </div>
+                          <button type="button" class="worker__show js-unhide">Contact agent</button>
+                          <div class="worker__intro-row">
+                            <div class="worker__intro-col">
+                              <div class="worker__contacts">
+                                <div class="tel"><span class="type">Tel.</span><a href="#" class="uri value">+1 404-637-9484</a></div>
 
-                          <div class="form-group form-group--col-4 required">
-                            <label for="in-form-name" class="control-label"><?php echo DETAILS_FORM_LABEL2 ?></label>
-                            <input id="in-form-name-x" type="text" name="last_name" required class="form-control">
+                                <div class="email"><span class="type">Email</span><a href="#" class="uri value">a.sandoval@joygle.com</a></div>
+
+                              </div>
+                              <!-- end of block .worker__contacts-->
+                            </div>
+                            <div class="worker__intro-col">
+
+                            </div>
                           </div>
-
-
-
-                          <div class="form-group form-group--col-4 required">
-                            <label for="in-form-email" class="control-label"><?php echo DETAILS_FORM_LABEL3 ?></label>
-                            <input id="in-form-email" type="email" name="email" required data-parsley-trigger="change" class="form-control">
+                          <div class="worker__intro-row">
+                            <div class="worker__descr">
+                              <p>
+Available 24/7.
+                             </p>
+                            </div>
                           </div>
-
-                          <div class="form-group form-group--col-4">
-                            <label for="in-form-phone" class="control-label"><?php echo DETAILS_FORM_LABEL4 ?></label>
-                            <input id="in-form-phone" type="text" name="telephone" class="form-control">
-                          </div>
-
-                          <div class="form-group required">
-                            <label for="in-form-message" class="control-label"><?php echo DETAILS_FORM_LABEL5 ?> : ID (<?=$result['dato2']?>)</label>
-                            <textarea id="in-form-message" name="message" required data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-validation-threshold="10" data-parsley-minlength-message="You need to enter at least a 20 caracters long comment.." class="form-control"></textarea>
-                          </div>
+						  
+<a data-toggle="modal" href="#modal2" class="rbm_modal_trigger" data-backdrop="true">Contact US</a>								  
+						  
                         </div>
+                        <div class="clearfix"></div>
+                      </div>
 
-                        <input type="hidden" value="<?=$result['dato2']?>" name="house_id" id="house_id">
+			  
+					  					  
 
-                        <div class="row">
-                          <button type="submit" class="form__submit"><?php echo DETAILS_FORM_BTN ?></button>
+										  
+										  
+<br>					  
+
+                      <div data-sr="enter bottom move 80px, scale(0), over 0s" data-animate-end="animate-end" class="worker js-unhide-block vcard worker--list worker--details">
+                        <div class="worker__photo"><a href="#" class="item-photo item-photo--static"><img src="assets/media-demo/workers/worker-h.jpg" alt="Christopher Pakulla" class="photo"/>
+                            <figure class="item-photo__hover"></figure></a></div>
+                        <div class="worker__intro">
+                          <div class="worker__intro-head">
+                            <div class="worker__intro-name">
+                              <h3 class="worker__name fn">Carlos M Varon</h3>
+                              <div class="worker__post">Real Estate Agent</div>
+                            </div>
+
+                            <!-- end of block .worker__listings-->
+                          </div>
+                          <button type="button" class="worker__show js-unhide">Contact agent</button>
+                          <div class="worker__intro-row">
+                            <div class="worker__intro-col">
+                              <div class="worker__contacts">
+                                <div class="tel"><span class="type">Tel.</span><a href="#" class="uri value">+1 954-478-5224</a></div>
+
+                                <div class="email"><span class="type">Email</span><a href="#" class="uri value">carlosmvaron@joygle.com</a></div>
+
+                              </div>
+                              <!-- end of block .worker__contacts-->
+                            </div>
+                            <div class="worker__intro-col">
+
+                            </div>
+                          </div>
+                          <div class="worker__intro-row">
+                            <div class="worker__descr">
+                              <p>
+Available 24/7.
+                             </p>
+                            </div>
+                          </div>
+						  
+<a data-toggle="modal" href="#modal3" class="rbm_modal_trigger" data-backdrop="true">Contact US</a>								  
+						  
                         </div>
+                        <div class="clearfix"></div>
+                      </div>
 
-                      </form>
-                      <!-- end of block form-->
+											  
+										  
+										  
+										  
+										  
+<br>					  
+
+                      <div data-sr="enter bottom move 80px, scale(0), over 0s" data-animate-end="animate-end" class="worker js-unhide-block vcard worker--list worker--details">
+                        <div class="worker__photo"><a href="#" class="item-photo item-photo--static"><img src="assets/media-demo/workers/worker-4.jpg" alt="Christopher Pakulla" class="photo"/>
+                            <figure class="item-photo__hover"></figure></a></div>
+                        <div class="worker__intro">
+                          <div class="worker__intro-head">
+                            <div class="worker__intro-name">
+                              <h3 class="worker__name fn">Aparecido Araujo</h3>
+                              <div class="worker__post">Real Estate Agent</div>
+                            </div>
+
+                            <!-- end of block .worker__listings-->
+                          </div>
+                          <button type="button" class="worker__show js-unhide">Contact agent</button>
+                          <div class="worker__intro-row">
+                            <div class="worker__intro-col">
+                              <div class="worker__contacts">
+                                <div class="tel"><span class="type">Tel.</span><a href="#" class="uri value">+1 770-352-4779</a></div>
+
+                                <div class="email"><span class="type">Email</span><a href="#" class="uri value">cido@joygle.com</a></div>
+
+                              </div>
+                              <!-- end of block .worker__contacts-->
+                            </div>
+                            <div class="worker__intro-col">
+
+                            </div>
+                          </div>
+                          <div class="worker__intro-row">
+                            <div class="worker__descr">
+                              <p>
+Available 24/7.
+                             </p>
+                            </div>
+                          </div>
+						  
+<a data-toggle="modal" href="#modal4" class="rbm_modal_trigger" data-backdrop="true">Contact US</a>								  
+						  
+                        </div>
+                        <div class="clearfix"></div>
+                      </div>
+
+											  
+<br>											  
+										  
+										  
+                    <h2 style="font-size:18px; font-weight: bold;">LISTING AGENT</h2>
+
+
+                      <div data-sr="enter bottom move 80px, scale(0), over 0s" data-animate-end="animate-end" class="worker js-unhide-block vcard worker--list worker--details">
+                        <div class="worker__photo"><img src="assets/media-demo/workers/worker-0.jpg" alt=""     width="50%!important;" height="50%!important;" ;  />
+                            </div>
+                        <div class="worker__intro">
+                          <div class="worker__intro-head">
+                            <div class="worker__intro-name">
+                              <h3 class="worker__name fn" style="font-size:12px!important;"><?=$result['dato29']?></h3>
+                              <div class="worker__post">Listing Agent</div>
+                            </div>
+
+                            <!-- end of block .worker__listings-->
+                          </div>
+                          <button type="button" class="worker__show js-unhide">Contact agent</button>
+                          <div class="worker__intro-row">
+                            <div class="worker__intro-col">
+                              <div class="worker__contacts">
+                                <div class="tel"><span class="type">Tel.</span><a href="#" class="uri value"  style="font-size:12px!important;">+1 <?=$result['dato30']?></a></div>
+
+
+
+                              </div>
+                              <!-- end of block .worker__contacts-->
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                      </div>
+										  
+
+
+
                       <div class="clearfix"></div>
                     </div>
                   </div>
@@ -508,17 +632,7 @@ Available 24/7.
                       <div class="row">
                         
 
-
-
-
-
-
                         <!-- FORMULARIO -->
-
-
-
-
-
 
 
                         <style>
@@ -612,20 +726,7 @@ Available 24/7.
                         </div>
 
 
-
-
-
-
                         <!-- FIN FORMULARIO -->
-
-
-
-
-
-
-
-
-
 
 
 
@@ -645,7 +746,7 @@ Available 24/7.
 
 
 
-
+                    <!--  -->
 
 
 
@@ -776,6 +877,842 @@ Available 24/7.
       <!-- BEGIN analytics.google -->
 <?php include("google-analytics.php"); ?>
       <!-- END analytics.google -->
+
+      <script>
+    /* --------------------------------------------------------------------------
+    *   Soluciona la falla del slider de precio si se entra a una pagina de
+    *   listado directamente por la URL sin hacer ninguna consulta
+    *  ------------------------------------------------------------------------ */
+    if(document.querySelector('#price-selector .ui-slider')) {} else {createPriceRange(1, 9999999);}
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	<!-- End of Trigger Part -->
+	
+
+
+
+
+
+
+
+					<div style="display:none;">
+
+
+                      <!-- end of block .worker-->
+                      <form action="ControllerEmail/send.php" method="POST" class="form form--flex form--property-agent js-contact-form form--properties">
+                        <div class="row">
+
+                          <div class="form-group form-group--col-4 required">
+                            <label for="in-form-name" class="control-label"><?php echo DETAILS_FORM_LABEL1 ?></label>
+                            <input id="in-form-name" type="text" name="name" required class="form-control">
+                          </div>
+
+                          <div class="form-group form-group--col-4 required">
+                            <label for="in-form-name" class="control-label"><?php echo DETAILS_FORM_LABEL2 ?></label>
+                            <input id="in-form-name-x" type="text" name="last_name" required class="form-control">
+                          </div>
+
+
+
+                          <div class="form-group form-group--col-4 required">
+                            <label for="in-form-email" class="control-label"><?php echo DETAILS_FORM_LABEL3 ?></label>
+                            <input id="in-form-email" type="email" name="email" required data-parsley-trigger="change" class="form-control">
+                          </div>
+
+                          <div class="form-group form-group--col-4">
+                            <label for="in-form-phone" class="control-label"><?php echo DETAILS_FORM_LABEL4 ?></label>
+                            <input id="in-form-phone" type="text" name="telephone" class="form-control">
+                          </div>
+
+                          <div class="form-group required">
+                            <label for="in-form-message" class="control-label"><?php echo DETAILS_FORM_LABEL5 ?> : ID (<?=$result['dato2']?>)</label>
+                            <textarea id="in-form-message" name="message" required data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-validation-threshold="10" data-parsley-minlength-message="You need to enter at least a 20 caracters long comment.." class="form-control"></textarea>
+                          </div>
+                        </div>
+
+                        <input type="hidden" value="<?=$result['dato2']?>" name="house_id" id="house_id">
+
+                        <div class="row">
+                          <button type="submit" class="form__submit"><?php echo DETAILS_FORM_BTN ?></button>
+                        </div>
+
+                      </form>
+                      <!-- end of block form-->
+
+
+
+					</div>
+
+
+
+
+
+
+
+					
+					
+					
+					
+					
+					
+					
+<script src="https://cdn.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+<script src="https://cdn.jotfor.ms/static/jotform.forms.js?3.3.3547" type="text/javascript"></script>
+<script type="text/javascript">
+   JotForm.init(function(){
+
+    (function() {
+      
+
+      var txtArea = $$('#input_7');
+
+      if (txtArea[0]) {
+        
+        
+      }
+    })();
+        JotForm.alterTexts({"alphabetic":"Este campo solo puede contener letras.","alphanumeric":"Este campo solo puede contener letras y números.","ccDonationMinLimitError":"Minimum amount is {minAmount} {currency}","ccInvalidCVC":"El número CVC no es válido.","ccInvalidExpireDate":"La fecha de expiración no es válida","ccInvalidNumber":"El número de su tarjeta de crédito no es válido.","ccMissingDetails":"Por favor rellene los datos de su Tarjeta de Crédito","ccMissingDonation":"Ingresa por favor una cantidad a donar","ccMissingProduct":"Por favor seleccione al menos un producto.","characterLimitError":"Demasiados caracteres. El límite es","characterMinLimitError":"Too few characters. The minimum is","confirmClearForm":"¿Seguro que quiere eliminar el formulario?","confirmEmail":"El correo electrónico no coincide","currency":"Este campo sólo puede contener valores de moneda.","cyrillic":"Este campo solo puede contener caracteres cirílicos.","dateInvalid":"Esta fecha no es valida. El formato de fecha es {format}","dateInvalidSeparate":"This date is not valid. Enter a valid {element}.","dateLimited":"Esta fecha no está disponible.","disallowDecimals":"Por favor, introduzca un número entero.","email":"Introduzca una dirección e-mail válida","fillMask":"El valor de este campo debe llenar la mascara","freeEmailError":"No se permiten cuentas de correo gratuitas ","generalError":"Existen errores en el formulario, por favor corríjalos antes de continuar.","generalPageError":"Hay errores en esta página. Por favor, corríjalos antes de continuar.","gradingScoreError":"El puntaje total debería ser sólo \"menos que\" o \"igual que\"","incompleteFields":"Existen campos requeridos incompletos. Por favor complételos.","inputCarretErrorA":"El valor introducido no puede ser menor que el mínimo especificado:","inputCarretErrorB":"La entrada no debe ser mas grande que el valor máximo:","lessThan":"Tu puntuación debería ser menor o igual que","maxDigitsError":"El máximo de dígitos permitido es","maxSelectionsError":"The maximum number of selections allowed is","minSelectionsError":"The minimum required number of selections is","multipleFileUploads_emptyError":"El fichero {file} está vacío; por favor, selecciona de nuevo los ficheros sin él.","multipleFileUploads_fileLimitError":"Solo {fileLimit} carga de archivos permitida.","multipleFileUploads_minSizeError":"{file} is demasiado pequeño, el tamaño mínimo de fichero es: {minSizeLimit}.","multipleFileUploads_onLeave":"Se están cargando los ficheros, si cierras ahora, se cancelará dicha carga.","multipleFileUploads_sizeError":"{file} es demasiado grande; el tamaño del archivo no debe superar los {sizeLimit}.","multipleFileUploads_typeError":"El fichero {file} posee una extensión no permitida. Sólo están permitidas las extensiones {extensions}.","nextButtonText":"Siguiente","numeric":"Este campo sólo admite valores numéricos.","pastDatesDisallowed":"La fecha debe ser futura","pleaseWait":"Por favor, espere ...","prevButtonText":"Anterior","progressMiddleText":"de","required":"Campo requerido.","requireEveryCell":"Se requieren todas las celdas.","requireEveryRow":"Todas las filas son obligatorias.","requireOne":"Al menos un campo requerido.","reviewBackText":"Back to Form","reviewSubmitText":"Review and Submit","seeAllText":"See All","submissionLimit":"¡Lo siento! Sólo se permite una entrada. Múltiples envíos están desactivados para este formulario.","submitButtonText":"Enviar","uploadExtensions":"Solo puede subir los siguientes archivos:","uploadFilesize":"Tamaño del archivo no puede ser mayor que:","uploadFilesizemin":"Tamañao de archivo no puede ser menos de:","url":"Este campo solo contiene una URL válida.","wordLimitError":"Demasiadas palabras. El límite es","wordMinLimitError":"Muy pocas palabras. El mínimo es"});
+	JotForm.clearFieldOnHide="disable";
+	JotForm.submitError="jumpToFirstError";
+    /*INIT-END*/
+});
+
+   JotForm.prepareCalculationsOnTheFly([null,{"name":"heading","qid":"1","text":"JOYGLE AGENT 1","type":"control_head"},{"name":"send","qid":"2","text":"SEND","type":"control_button"},{"name":"name","qid":"3","text":"Name:","type":"control_textbox"},{"name":"lastName","qid":"4","text":"Last Name:","type":"control_textbox"},{"name":"email","qid":"5","text":"Email:","type":"control_email"},{"name":"phone","qid":"6","text":"Phone:","type":"control_phone"},{"name":"typeA7","qid":"7","text":"Type a question:","type":"control_textarea"}]);
+   setTimeout(function() {
+JotForm.paymentExtrasOnTheFly([null,{"name":"heading","qid":"1","text":"JOYGLE AGENT 1","type":"control_head"},{"name":"send","qid":"2","text":"SEND","type":"control_button"},{"name":"name","qid":"3","text":"Name:","type":"control_textbox"},{"name":"lastName","qid":"4","text":"Last Name:","type":"control_textbox"},{"name":"email","qid":"5","text":"Email:","type":"control_email"},{"name":"phone","qid":"6","text":"Phone:","type":"control_phone"},{"name":"typeA7","qid":"7","text":"Type a question:","type":"control_textarea"}]);}, 20); 
+</script>
+<link href="https://cdn.jotfor.ms/static/formCss.css?3.3.3547" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.3547" />
+<link type="text/css" media="print" rel="stylesheet" href="https://cdn.jotfor.ms/css/printForm.css?3.3.3547" />
+<!--link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/566a91c2977cdfcd478b4567.css?"/-->
+<style type="text/css">
+
+/*
+
+    .form-label-left{
+        width:150px;
+    }
+    .form-line{
+        padding-top:12px;
+        padding-bottom:12px;
+    }
+    .form-label-right{
+        width:150px;
+    }
+    .form-all{
+        width:690px;
+        color:#555 !important;
+        font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+        font-size:14px;
+    }
+	
+	*/
+	
+</style>
+
+<style type="text/css" id="form-designer-style">
+    /* Injected CSS Code */
+.form-label.form-label-auto { display: block; float: none; text-align: left; width: inherit; } /*__INSPECT_SEPERATOR__*/
+    /* Injected CSS Code */
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Inicio  Modal 1 -->
+	<div id="modal1" class="modal fade rbm_modal rbm_form_general rbm_size_contact rbm_center rbm_bd_semi_trnsp rbm_bd_black rbm_bg_white rbm_blue rbm_none_radius rbm_shadow_lg_black rbm_animate rbm_duration_md rbmFadeInDown rbm_easeOutQuint" role="dialog">
+
+		<!-- Modal Dialog-->
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+
+
+
+				<!-- Modal Body-->
+				<div class="rbm_form_body">
+					<!-- Form-->
+					
+					
+					
+	<form class="jotform-form" action="https://submit.jotformz.com/submit/73533088424660/" method="post" name="form_73533088424660" id="73533088424660" accept-charset="utf-8">
+  <input type="hidden" name="formID" value="73533088424660" />
+  <div class="form-all">
+    <ul class="form-section page-section">
+      <li id="cid_1" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group ">
+          <div class="header-text httal htvam">
+            <h2 id="header_1" class="form-header" data-component="header">
+              Pablo  Cardona
+            </h2>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_3">
+        <label class="form-label form-label-top form-label-auto" id="label_3" for="input_3">
+          Name:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_3" class="form-input-wide jf-required">
+          <input type="text" id="input_3" name="q3_name" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" data-component="textbox" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_4">
+        <label class="form-label form-label-top form-label-auto" id="label_4" for="input_4">
+          Last Name:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_4" class="form-input-wide jf-required">
+          <input type="text" id="input_4" name="q4_lastName" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" data-component="textbox" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_email" id="id_5">
+        <label class="form-label form-label-top form-label-auto" id="label_5" for="input_5">
+          Email:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_5" class="form-input-wide jf-required">
+          <span class="form-sub-label-container" style="vertical-align:top;">
+            <input type="email" id="input_5" name="q5_email" class="form-textbox validate[required, Email]" size="30" value="" data-component="email" required="" />
+            <label class="form-sub-label" for="input_5" style="min-height:13px;"> example@example.com </label>
+          </span>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_phone" id="id_6">
+        <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6_area"> Phone: </label>
+        <div id="cid_6" class="form-input-wide">
+          <div data-wrapper-react="true">
+            <span class="form-sub-label-container" style="vertical-align:top;">
+              <input type="tel" id="input_6_area" name="q6_phone[area]" class="form-textbox" size="3" value="" data-component="areaCode" />
+              <span class="phone-separate">
+                 -
+              </span>
+              <label class="form-sub-label" for="input_6_area" id="sublabel_area" style="min-height:13px;"> Código de área </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top;">
+              <input type="tel" id="input_6_phone" name="q6_phone[phone]" class="form-textbox" size="8" value="" data-component="phone" />
+              <label class="form-sub-label" for="input_6_phone" id="sublabel_phone" style="min-height:13px;"> Número de teléfono </label>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_8">
+        <label class="form-label form-label-top form-label-auto" id="label_8" for="input_8">
+          Id:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_8" class="form-input-wide jf-required">
+          <input type="text" id="input_8" name="q8_id" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="(<?=$result['dato2']?>)" data-component="textbox" required="" readonly/>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textarea" id="id_7">
+        <label class="form-label form-label-top form-label-auto" id="label_7" for="input_7">
+          Type a question:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_7" class="form-input-wide jf-required">
+          <textarea id="input_7" class="form-textarea validate[required]" name="q7_typeA7" cols="40" rows="6" data-component="textarea" required=""></textarea>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button" id="id_2">
+        <div id="cid_2" class="form-input-wide">
+          <div style="margin-left:156px;" class="form-buttons-wrapper">
+            <button id="input_2" type="submit" class="form-submit-button" data-component="button">
+              SEND
+            </button>
+          </div>
+        </div>
+      </li>
+      <li style="display:none">
+        Should be Empty:
+        <input type="text" name="website" value="" />
+      </li>
+    </ul>
+  </div>
+  <script>
+  JotForm.showJotFormPowered = "new_footer";
+  </script>
+  <input type="hidden" id="simple_spc" name="simple_spc" value="73533088424660" />
+  <script type="text/javascript">
+  document.getElementById("si" + "mple" + "_spc").value = "73533088424660-73533088424660";
+  </script>
+  <div class="formFooter-heightMask">
+  </div>
+  <div class="formFooter"  style="display:none;">
+    <a href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=73533088424660&utm_content=jotform_logo&utm_campaign=powered_by_jotform_signup_hp" target="_blank" class="formFooter-logoLink"><img class="formFooter-logo" src="https://cdn.jotfor.ms/assets/img/logo/logo-new@1x.png" alt="" style="height: 44px;"></a>
+    <div class="formFooter-rightSide">
+      <span class="formFooter-text">
+        Now create your own JotForm - It's free!
+      </span>
+      <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=73533088424660&utm_content=jotform_button&utm_campaign=powered_by_jotform_signup_hp" target="_blank">Create your own JotForm</a>
+    </div>
+  </div>
+</form>	
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<!-- /Form-->	
+				</div>
+				<!-- /Modal Body-->
+				
+
+
+			</div> <!-- /Modal content-->
+		</div> <!-- /Modal Dialog-->
+	</div> <!-- .modal -->
+	<!-- Fin   Modal 1 -->
+	
+	
+
+
+	
+	<!-- Inicio  Modal 2 -->
+	<div id="modal2" class="modal fade rbm_modal rbm_form_general rbm_size_contact rbm_center rbm_bd_semi_trnsp rbm_bd_black rbm_bg_white rbm_blue rbm_none_radius rbm_shadow_lg_black rbm_animate rbm_duration_md rbmFadeInDown rbm_easeOutQuint" role="dialog">
+
+		<!-- Modal Dialog-->
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+
+
+
+				<!-- Modal Body-->
+				<div class="rbm_form_body">
+					<!-- Form-->
+
+
+
+<form class="jotform-form" action="https://submit.jotformz.com/submit/73532987924672/" method="post" name="form_73532987924672" id="73532987924672" accept-charset="utf-8">
+  <input type="hidden" name="formID" value="73532987924672" />
+  <div class="form-all">
+    <ul class="form-section page-section">
+      <li id="cid_1" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group ">
+          <div class="header-text httal htvam">
+            <h2 id="header_1" class="form-header" data-component="header">
+              Alejandra Sandoval
+            </h2>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_3">
+        <label class="form-label form-label-top form-label-auto" id="label_3" for="input_3">
+          Name:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_3" class="form-input-wide jf-required">
+          <input type="text" id="input_3" name="q3_name" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" data-component="textbox" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_4">
+        <label class="form-label form-label-top form-label-auto" id="label_4" for="input_4">
+          Last Name:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_4" class="form-input-wide jf-required">
+          <input type="text" id="input_4" name="q4_lastName" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" data-component="textbox" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_email" id="id_5">
+        <label class="form-label form-label-top form-label-auto" id="label_5" for="input_5">
+          Email:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_5" class="form-input-wide jf-required">
+          <span class="form-sub-label-container" style="vertical-align:top;">
+            <input type="email" id="input_5" name="q5_email" class="form-textbox validate[required, Email]" size="30" value="" data-component="email" required="" />
+            <label class="form-sub-label" for="input_5" style="min-height:13px;"> example@example.com </label>
+          </span>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_phone" id="id_6">
+        <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6_area"> Phone: </label>
+        <div id="cid_6" class="form-input-wide">
+          <div data-wrapper-react="true">
+            <span class="form-sub-label-container" style="vertical-align:top;">
+              <input type="tel" id="input_6_area" name="q6_phone[area]" class="form-textbox" size="3" value="" data-component="areaCode" />
+              <span class="phone-separate">
+                 -
+              </span>
+              <label class="form-sub-label" for="input_6_area" id="sublabel_area" style="min-height:13px;"> Código de área </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top;">
+              <input type="tel" id="input_6_phone" name="q6_phone[phone]" class="form-textbox" size="8" value="" data-component="phone" />
+              <label class="form-sub-label" for="input_6_phone" id="sublabel_phone" style="min-height:13px;"> Número de teléfono </label>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_8">
+        <label class="form-label form-label-top form-label-auto" id="label_8" for="input_8">
+          Id:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_8" class="form-input-wide jf-required">
+          <input type="text" id="input_8" name="q8_id" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="(<?=$result['dato2']?>)" data-component="textbox" required="" readonly/>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textarea" id="id_7">
+        <label class="form-label form-label-top form-label-auto" id="label_7" for="input_7">
+          Type a question:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_7" class="form-input-wide jf-required">
+          <textarea id="input_7" class="form-textarea validate[required]" name="q7_typeA7" cols="40" rows="6" data-component="textarea" required=""></textarea>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button" id="id_2">
+        <div id="cid_2" class="form-input-wide">
+          <div style="margin-left:156px;" class="form-buttons-wrapper">
+            <button id="input_2" type="submit" class="form-submit-button" data-component="button">
+              SEND
+            </button>
+          </div>
+        </div>
+      </li>
+      <li style="display:none">
+        Should be Empty:
+        <input type="text" name="website" value="" />
+      </li>
+    </ul>
+  </div>
+  <script>
+  JotForm.showJotFormPowered = "new_footer";
+  </script>
+  <input type="hidden" id="simple_spc" name="simple_spc" value="73532987924672" />
+  <script type="text/javascript">
+  document.getElementById("si" + "mple" + "_spc").value = "73532987924672-73532987924672";
+  </script>
+  <div class="formFooter-heightMask">
+  </div>
+  <div class="formFooter" style="display:none;">
+    <a href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=73532987924672&utm_content=jotform_logo&utm_campaign=powered_by_jotform_signup_hp" target="_blank" class="formFooter-logoLink"><img class="formFooter-logo" src="https://cdn.jotfor.ms/assets/img/logo/logo-new@1x.png" alt="" style="height: 44px;"></a>
+    <div class="formFooter-rightSide">
+      <span class="formFooter-text">
+        Now create your own JotForm - It's free!
+      </span>
+      <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=73532987924672&utm_content=jotform_button&utm_campaign=powered_by_jotform_signup_hp" target="_blank">Create your own JotForm</a>
+    </div>
+  </div>
+</form>
+
+
+
+
+
+					<!-- /Form-->	
+				</div>
+				<!-- /Modal Body-->
+				
+
+
+			</div> <!-- /Modal content-->
+		</div> <!-- /Modal Dialog-->
+	</div> <!-- .modal -->
+	<!-- Fin   Modal 2 -->	
+	
+	
+	
+
+	<!-- Inicio  Modal 3 -->
+	<div id="modal3" class="modal fade rbm_modal rbm_form_general rbm_size_contact rbm_center rbm_bd_semi_trnsp rbm_bd_black rbm_bg_white rbm_blue rbm_none_radius rbm_shadow_lg_black rbm_animate rbm_duration_md rbmFadeInDown rbm_easeOutQuint" role="dialog">
+
+		<!-- Modal Dialog-->
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+
+
+
+				<!-- Modal Body-->
+				<div class="rbm_form_body">
+					<!-- Form-->
+
+
+<form class="jotform-form" action="https://submit.jotformz.com/submit/73534037524656/" method="post" name="form_73534037524656" id="73534037524656" accept-charset="utf-8">
+  <input type="hidden" name="formID" value="73534037524656" />
+  <div class="form-all">
+    <ul class="form-section page-section">
+      <li id="cid_1" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group ">
+          <div class="header-text httal htvam">
+            <h2 id="header_1" class="form-header" data-component="header">
+              Carlos M Varon
+            </h2>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_3">
+        <label class="form-label form-label-top form-label-auto" id="label_3" for="input_3">
+          Name:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_3" class="form-input-wide jf-required">
+          <input type="text" id="input_3" name="q3_name" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" data-component="textbox" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_4">
+        <label class="form-label form-label-top form-label-auto" id="label_4" for="input_4">
+          Last Name:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_4" class="form-input-wide jf-required">
+          <input type="text" id="input_4" name="q4_lastName" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" data-component="textbox" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_email" id="id_5">
+        <label class="form-label form-label-top form-label-auto" id="label_5" for="input_5">
+          Email:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_5" class="form-input-wide jf-required">
+          <span class="form-sub-label-container" style="vertical-align:top;">
+            <input type="email" id="input_5" name="q5_email" class="form-textbox validate[required, Email]" size="30" value="" data-component="email" required="" />
+            <label class="form-sub-label" for="input_5" style="min-height:13px;"> example@example.com </label>
+          </span>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_phone" id="id_6">
+        <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6_area"> Phone: </label>
+        <div id="cid_6" class="form-input-wide">
+          <div data-wrapper-react="true">
+            <span class="form-sub-label-container" style="vertical-align:top;">
+              <input type="tel" id="input_6_area" name="q6_phone[area]" class="form-textbox" size="3" value="" data-component="areaCode" />
+              <span class="phone-separate">
+                 -
+              </span>
+              <label class="form-sub-label" for="input_6_area" id="sublabel_area" style="min-height:13px;"> Código de área </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top;">
+              <input type="tel" id="input_6_phone" name="q6_phone[phone]" class="form-textbox" size="8" value="" data-component="phone" />
+              <label class="form-sub-label" for="input_6_phone" id="sublabel_phone" style="min-height:13px;"> Número de teléfono </label>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_8">
+        <label class="form-label form-label-top form-label-auto" id="label_8" for="input_8">
+          Id:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_8" class="form-input-wide jf-required">
+          <input type="text" id="input_8" name="q8_id" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="(<?=$result['dato2']?>)" data-component="textbox" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textarea" id="id_7">
+        <label class="form-label form-label-top form-label-auto" id="label_7" for="input_7">
+          Type a question:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_7" class="form-input-wide jf-required">
+          <textarea id="input_7" class="form-textarea validate[required]" name="q7_typeA7" cols="40" rows="6" data-component="textarea" required=""></textarea>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button" id="id_2">
+        <div id="cid_2" class="form-input-wide">
+          <div style="margin-left:156px;" class="form-buttons-wrapper">
+            <button id="input_2" type="submit" class="form-submit-button" data-component="button">
+              SEND
+            </button>
+          </div>
+        </div>
+      </li>
+      <li style="display:none">
+        Should be Empty:
+        <input type="text" name="website" value="" />
+      </li>
+    </ul>
+  </div>
+  <script>
+  JotForm.showJotFormPowered = "new_footer";
+  </script>
+  <input type="hidden" id="simple_spc" name="simple_spc" value="73534037524656" />
+  <script type="text/javascript">
+  document.getElementById("si" + "mple" + "_spc").value = "73534037524656-73534037524656";
+  </script>
+  <div class="formFooter-heightMask">
+  </div>
+  <div class="formFooter" style="display:none;">
+    <a href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=73534037524656&utm_content=jotform_logo&utm_campaign=powered_by_jotform_signup_hp" target="_blank" class="formFooter-logoLink"><img class="formFooter-logo" src="https://cdn.jotfor.ms/assets/img/logo/logo-new@1x.png" alt="" style="height: 44px;"></a>
+    <div class="formFooter-rightSide">
+      <span class="formFooter-text">
+        Now create your own JotForm - It's free!
+      </span>
+      <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=73534037524656&utm_content=jotform_button&utm_campaign=powered_by_jotform_signup_hp" target="_blank">Create your own JotForm</a>
+    </div>
+  </div>
+</form>
+
+
+
+
+
+					<!-- /Form-->	
+				</div>
+				<!-- /Modal Body-->
+				
+
+
+			</div> <!-- /Modal content-->
+		</div> <!-- /Modal Dialog-->
+	</div> <!-- .modal -->
+	<!-- Fin   Modal 3 -->	
+	
+	
+	
+
+	<!-- Inicio  Modal 4 -->
+	<div id="modal4" class="modal fade rbm_modal rbm_form_general rbm_size_contact rbm_center rbm_bd_semi_trnsp rbm_bd_black rbm_bg_white rbm_blue rbm_none_radius rbm_shadow_lg_black rbm_animate rbm_duration_md rbmFadeInDown rbm_easeOutQuint" role="dialog">
+
+		<!-- Modal Dialog-->
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+
+
+
+				<!-- Modal Body-->
+				<div class="rbm_form_body">
+					<!-- Form-->
+
+
+<form class="jotform-form" action="https://submit.jotformz.com/submit/73533569424664/" method="post" name="form_73533569424664" id="73533569424664" accept-charset="utf-8">
+  <input type="hidden" name="formID" value="73533569424664" />
+  <div class="form-all">
+    <ul class="form-section page-section">
+      <li id="cid_1" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group ">
+          <div class="header-text httal htvam">
+            <h2 id="header_1" class="form-header" data-component="header">
+              Aparecido Araujo
+            </h2>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_3">
+        <label class="form-label form-label-top form-label-auto" id="label_3" for="input_3">
+          Name:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_3" class="form-input-wide jf-required">
+          <input type="text" id="input_3" name="q3_name" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" data-component="textbox" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_4">
+        <label class="form-label form-label-top form-label-auto" id="label_4" for="input_4">
+          Last Name:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_4" class="form-input-wide jf-required">
+          <input type="text" id="input_4" name="q4_lastName" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" data-component="textbox" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_email" id="id_5">
+        <label class="form-label form-label-top form-label-auto" id="label_5" for="input_5">
+          Email:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_5" class="form-input-wide jf-required">
+          <span class="form-sub-label-container" style="vertical-align:top;">
+            <input type="email" id="input_5" name="q5_email" class="form-textbox validate[required, Email]" size="30" value="" data-component="email" required="" />
+            <label class="form-sub-label" for="input_5" style="min-height:13px;"> example@example.com </label>
+          </span>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_phone" id="id_6">
+        <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6_area"> Phone: </label>
+        <div id="cid_6" class="form-input-wide">
+          <div data-wrapper-react="true">
+            <span class="form-sub-label-container" style="vertical-align:top;">
+              <input type="tel" id="input_6_area" name="q6_phone[area]" class="form-textbox" size="3" value="" data-component="areaCode" />
+              <span class="phone-separate">
+                 -
+              </span>
+              <label class="form-sub-label" for="input_6_area" id="sublabel_area" style="min-height:13px;"> Código de área </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top;">
+              <input type="tel" id="input_6_phone" name="q6_phone[phone]" class="form-textbox" size="8" value="" data-component="phone" />
+              <label class="form-sub-label" for="input_6_phone" id="sublabel_phone" style="min-height:13px;"> Número de teléfono </label>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_8">
+        <label class="form-label form-label-top form-label-auto" id="label_8" for="input_8">
+          Id:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_8" class="form-input-wide jf-required">
+          <input type="text" id="input_8" name="q8_id" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="(<?=$result['dato2']?>)" data-component="textbox" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textarea" id="id_7">
+        <label class="form-label form-label-top form-label-auto" id="label_7" for="input_7">
+          Type a question:
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_7" class="form-input-wide jf-required">
+          <textarea id="input_7" class="form-textarea validate[required]" name="q7_typeA7" cols="40" rows="6" data-component="textarea" required=""></textarea>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button" id="id_2">
+        <div id="cid_2" class="form-input-wide">
+          <div style="margin-left:156px;" class="form-buttons-wrapper">
+            <button id="input_2" type="submit" class="form-submit-button" data-component="button">
+              SEND
+            </button>
+          </div>
+        </div>
+      </li>
+      <li style="display:none">
+        Should be Empty:
+        <input type="text" name="website" value="" />
+      </li>
+    </ul>
+  </div>
+  <script>
+  JotForm.showJotFormPowered = "new_footer";
+  </script>
+  <input type="hidden" id="simple_spc" name="simple_spc" value="73533569424664" />
+  <script type="text/javascript">
+  document.getElementById("si" + "mple" + "_spc").value = "73533569424664-73533569424664";
+  </script>
+  <div class="formFooter-heightMask">
+  </div>
+  <div class="formFooter" style="display:none;">
+    <a href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=73533569424664&utm_content=jotform_logo&utm_campaign=powered_by_jotform_signup_hp" target="_blank" class="formFooter-logoLink"><img class="formFooter-logo" src="https://cdn.jotfor.ms/assets/img/logo/logo-new@1x.png" alt="" style="height: 44px;"></a>
+    <div class="formFooter-rightSide">
+      <span class="formFooter-text">
+        Now create your own JotForm - It's free!
+      </span>
+      <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=73533569424664&utm_content=jotform_button&utm_campaign=powered_by_jotform_signup_hp" target="_blank">Create your own JotForm</a>
+    </div>
+  </div>
+</form>
+
+
+
+
+
+					<!-- /Form-->	
+				</div>
+				<!-- /Modal Body-->
+				
+
+
+			</div> <!-- /Modal content-->
+		</div> <!-- /Modal Dialog-->
+	</div> <!-- .modal -->
+	<!-- Fin   Modal 4 -->	
+	
+	
+	
+
+
+
+
+
+
+
+	<!-- Responsive Bootstrap Modal Popup Main JS File -->
+	<script src="modal/js/responsive_bootstrap_modal_popup_min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">JotForm.ownerView=true;</script>					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
 
   </body>
 </html>
